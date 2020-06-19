@@ -84,6 +84,7 @@ body {
     top: 8px;
     padding: 20px;
     border:2px solid !important;
+    margin-top: 1rem!important;
 }
 
 .navbar-brand {
@@ -114,11 +115,11 @@ body {
     width: 117.8px;
     height: 34.15px;
     left: 81.24px;
-    top: 52.85px;
+    
     font-family: 'PT Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: var(--font-small-10);
+    font-size: 14px;
     line-height: 20px;
     /* or 250% */
     /* font-variant: small-caps; */
@@ -153,11 +154,7 @@ body {
 .footer .navbar-brand>img {
     /* width: 100px */
 }
-.footer .logo-sub {
-    font-size: var(--font-small-20);
-    left: 54.24px;
-    top: 52.85px;
-}
+
 
 .footer a {
     font-size: var(--font-small-13);
@@ -181,8 +178,10 @@ body {
         font-weight: 100;
     }
     
-    .footer .navbar-brand>img {
-        /* width: 180px */
+    .footer .logo-sub {
+        font-size: var(--font-small-20);
+        left: 54.24px;
+        top: 79px;
     }
     .seven .testimonial, .seven a, .seven span{
         font-size: 34px !important;
@@ -273,7 +272,16 @@ body {
         margin-top:20px;
         width:40px;
     }
-    
+      .logo{
+        min-height: 74px;
+    }
+    .navbar {
+        min-height: 129px;
+    }
+     .logo-sub{
+        top:79px;
+       font-size:30px;
+    }
 }
 #passwordHelpBlocks {
     font-size: var(--font-small-16);
