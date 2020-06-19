@@ -82,25 +82,25 @@ const targetAmount = target.val().replace(/,/g,'');
     }
 
     //Effective Rate  === r
-    if (rewardDuration.val() === "") { effrate = '0'; }
-    else if (rewardDuration.val() == 12) { effrate = ((intRate * 0.9)) }
-    else if (rewardDuration.val() == 4) { effrate = ((intRate * 0.9)) }
-    else if (rewardDuration.val() == 2) { effrate = ((intRate * 0.9)) }
-    else if (rewardDuration.val() == 1) { effrate = ((intRate * 0.9)) }
-    console.log(effrate)
-    //Number of Payments === n
-    if (rewardDuration.val() === "") { numPay = 0; }
-    else if (rewardDuration.val() == 12) { numPay = parseInt(rewardDuration.val()) }
-    else if (rewardDuration.val() == 4) { numPay = parseInt(rewardDuration.val()) }
-    else if (rewardDuration.val() == 2) { numPay = parseInt(rewardDuration.val()) }
-    else if (rewardDuration.val() == 1) { numPay = parseInt(rewardDuration.val()) }
+    switch(parseInt(rewardDuration.val())) {
+        case 12:
+        case 4:
+        case 2:
+        case 1:
+            //Effective Rate  === r
+            effrate = ((intRate * 0.9));
+             //Number of Payments === n
+            numPay = parseInt(rewardDuration.val(), 10);
+            //Tenor in Years === t
+            xtenor = (rewardDurationVal) 
+        break;
+        default:
+            effrate = 0;
+            numPay = 0;
+            xtenor = 0;
+            break;
 
-    //Tenor in Years === t
-    if (rewardDuration.val() === "") { xtenor = 0; }
-    else if (rewardDuration.val() == 12) { xtenor = (rewardDurationVal) }
-    else if (rewardDuration.val() == 4) { xtenor = (rewardDurationVal) }
-    else if (rewardDuration.val() == 2) { xtenor = (rewardDurationVal) }
-    else if (rewardDuration.val() == 1) { xtenor = (rewardDurationVal) }
+    }
 
 
     ////////// Values ///////////
