@@ -1,3 +1,6 @@
+.six{
+    height: auto !important;
+}
 .input-icons i {
     position: absolute;
     line-height: 37px;
@@ -40,12 +43,12 @@ input:focus{
 }
 .card-header{
     padding-bottom:20px;
-    padding-top:20px;
+    padding-top: 20px;
 }
 .card-header a{
     font-style: normal;
     font-weight: bold;
-    font-size: var(--font-small-24);
+    font-size: 18px;
     line-height: 24px;
     /* or 102% */
    
