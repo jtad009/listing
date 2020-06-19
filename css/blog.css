@@ -48,6 +48,7 @@
 
 .blogBody {
     padding: 20px;
+    font-size:15px;
 }
 
 .form-control:focus {
@@ -103,5 +104,9 @@
     }
     .blogCard a, .blog2 .card span.readTime, .blogCard span.readTime{
         font-size: 30px;
+    }
+    .blogBody {
+        padding: 20px;
+        font-size:34px;
     }
 }
