@@ -1,0 +1,81 @@
+.one{
+    min-height: 444px;
+    /* background-image: url('../img/target-investments/target-investment.svg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.subtitle {
+    font-size: var(--font-small-24);
+    /* line-height: 48px; */
+}
+.five .subtitle {
+    font-size: 14px ;
+    /* line-height: 27px !important; */
+}
+.six .subtitle {
+    font-size: var(--font-small-20) ;
+    /* line-height: 37px !important; */
+}
+.five .title{
+    font-size: var(--font-title-3) ;
+    line-height: 48px !important;
+}
+.five h6.title  {
+    font-size: var(--font-small-24) ;
+    line-height: 48px !important;
+}
+
+.one .title {
+    /* width: 503px; */
+    line-height: 68px;
+    /* height: 205px; */
+    
+    /* position: absolute; */
+    font-size: var(--font-title-2) !important;
+}
+.one .btn-primary:hover, .one .btn-primary.focus, .one .btn-primary:focus, .one .btn-primary:not(:disabled):not(.disabled).active, .one .btn-primary:not(:disabled):not(.disabled):active, .one .show>.btn-primary.dropdown-toggle{
+    background: white !important;
+}
+
+@media only screen and (max-width: 992px) {
+    .five .title {
+        font-size: var(--font-title-2) !important;
+        line-height: 48px !important;
+    }
+    .five .b-card3{
+        width: 100%;
+        min-width: 540px;
+    }
+    .b-card3 .subtitle{
+        line-height: 59px !important;
+    }
+    .subtitle {
+        font-style: normal;
+        font-weight: 100;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 39px !important;
+    }
+}
+.b-card3{
+    padding: 1px 0px;
+}
+.two {
+    background-color: var(--secondary-color);
+    min-height: 380px;
+}
+.list{
+    padding-left: 50px;
+}
+.list:before {
+    position: absolute;
+content: "";
+font-size: 1em;
+margin-left: -2em;
+margin-top: 0.7em;
+background: url(../img/list-icon.svg) no-repeat;
+height: 20px;
+width: 20px;
+}
