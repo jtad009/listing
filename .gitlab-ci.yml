@@ -1,0 +1,42 @@
+image: docker:latest
+
+stages:
+ - deploy
+
+deploy_develop:
+ stage: deploy
+ environment:
+  name: development
+  url: doubble-dev.wbcstaging.com
+ only:
+  - develop
+ before_script:
+  - apk update
+  - apk upgrade
+  - 'command -v ssh-agent || ( apk add openssh-client )'
+  - eval $(ssh-agent -s)
+  - echo "$DOUBLE_SSH_PRIVATE_KEY" | ssh-add -
+  - mkdir -p ~/.ssh
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  - chmod +x ./.gitlab/depoy-scripts/deploy_staging.sh
+ script:
+  - ssh wbc@140.82.8.14 DEPLOY_ENV="develop" 'bash -s' < ./.gitlab/depoy-scripts/deploy_staging.sh
+
+deploy_staging:
+ stage: deploy
+ environment:
+  name: staging
+  url: doubble.wbcstaging.com
+ only:
+  - staging
+ before_script:
+  - apk update
+  - apk upgrade
+  - 'command -v ssh-agent || ( apk add openssh-client )'
+  - eval $(ssh-agent -s)
+  - echo "$DOUBLE_SSH_PRIVATE_KEY" | ssh-add -
+  - mkdir -p ~/.ssh
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  - chmod +x ./.gitlab/depoy-scripts/deploy_staging.sh
+ script:
+  - ssh wbc@140.82.8.14 DEPLOY_ENV="staging" 'bash -s' < ./.gitlab/depoy-scripts/deploy_staging.sh
