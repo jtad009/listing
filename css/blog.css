@@ -68,15 +68,15 @@
     font-size: var(--font-small-18);
     height: 109px;
 }
-.blogCard a, .blog2 .card span.readTime{
+.blogCard a{
     color: var(--primary-color);
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     /* line-height: 24px; */
 }
-.blog2 .card span.readTime, .blogCard span.readTime{
+ span.readTime{
     font-style: normal;
     font-weight: normal !important;
     font-size: 14px;
@@ -97,13 +97,15 @@
 
     bottom:33px; right:20px;
 }
-
+.blogTitle{
+    font-size: 40px;
+}
 @media only screen and (max-width: 992px) {
     .blog .card-text, .blog2 .card-text, .blogCard .card-text{
         color: var(--primary-color);
         font-size: var(--font-title-3);
     }
-    .blogCard a, .blog2 .card span.readTime, .blogCard span.readTime{
+    .blogCard a,   span.readTime{
         font-size: 30px;
     }
     .blogBody {
