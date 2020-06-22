@@ -101,7 +101,7 @@
         padding: 0 20px;
     }
     .b-card .body>b {
-        font-size: var(--font-title-3) !important;
+        font-size: 40px !important;
     }
     .b-card .body>p {
         margin-top: 9px;
@@ -152,8 +152,7 @@
 
 .b-card>img {
     position: relative;
-    width: 136px;
-    height: 119px;
+    height:99px;
     top: 79px;
 }
 
