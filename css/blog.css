@@ -66,6 +66,7 @@
     padding-bottom: 14px;
     color: var(--primary-color);
     font-size: var(--font-small-18);
+    height: 109px;
 }
 .blogCard a, .blog2 .card span.readTime{
     color: var(--primary-color);
