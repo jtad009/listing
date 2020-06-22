@@ -57,18 +57,18 @@
             <div class="col-md-10 mx-auto mt-3">
                 <div class="row">
                     <div class="col-md-6 p-5">
-                        <h2 class="title blogTitle" >2 Smart Moves Wealthy Are Making During The Pandemic</h2>
+                        <h2 class="title blogTitle">2 Smart Moves Wealthy Are Making During The Pandemic</h2>
                         <span class="primary-color readTime">10 MIN READ</span>
                         <p class="mt-2">
                             <a href="#" class=" mt-1 mr-2"><img src="img/social/twitter.svg" /></a>
                             <a href="#" class=" mt-1 mr-2"><img src="img/social/fb.svg" /></a>
                             <a href="#" class=" mt-1 mr-2"><img src="img/social/whatsapp.svg" /></a>
                             <a href="#" class=" mt-1 mr-2"><img src="img/social/msg.svg" /></a>
-                            
+
                         </p>
                     </div>
                     <div class="col-md-6">
-                        <img src="img/blog.svg" class="img img-fluid w-100 h-100" style="object-fit:fill"/>
+                        <img src="img/blog.svg" class="img img-fluid w-100 h-100" style="object-fit:fill" />
                     </div>
                 </div>
                 <div class="row">
@@ -113,15 +113,22 @@
         </div>
 
         <div class="row two">
-            <div class="col-md-10 mx-auto mt-3">
-                <h2 class="title mt-5 blogTitle">Comments</h2>
+            <div class="col-md-11 mx-auto">
+                <div class="col-md-10 mx-auto mt-3">
+                    <h2 class="title mt-5 blogTitle">Comments</h2>
+                </div>
+                <div class=" col-md-8 mx-auto p-4">
+                    <div id="disqus_thread"></div>
+                    
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                            powered by Disqus.</a></noscript>
+                </div>
             </div>
-            <div class="title mt-3 ">
-                
-            </div>
+           
         </div>
 
         <div class="row">
+            <div class="col-md-11 mx-auto">
             <div class="col-md-10 mx-auto mt-3">
                 <h2 class="title blogTitle mt-5 ">Related Articles</h2>
             </div>
@@ -133,7 +140,7 @@
                             <div class="card-body">
                                 <h4 class="card-title d-none">John Doe</h4>
                                 <p class="card-text">2 smart moves wealthy are making during the pandemic</p>
-                               
+
                                 <a href="#" class=" float-right">Read More</a>
                             </div>
                         </div>
@@ -145,7 +152,7 @@
                             <div class="card-body">
                                 <h4 class="card-title d-none">John Doe</h4>
                                 <p class="card-text">7 awesome ways to "save money live better"</p>
-                               
+
                                 <a href="#" class=" float-right">Read More</a>
                             </div>
                         </div>
@@ -156,13 +163,14 @@
                             <div class="card-body">
                                 <h4 class="card-title d-none">John Doe</h4>
                                 <p class="card-text">Which best describes the difference between stocks and bonds?</p>
-                                
+
                                 <a href="#" class=" float-right">Read More</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
+            </div>
             </div>
         </div>
         <div class="row footer">
@@ -208,7 +216,7 @@
                 <p class="title mt-3">Subcribe To Our Newsletter</p>
 
                 <p class="social mt-2">
-                    <input class="form-control" placeholder="enter email" />
+                    <input class="form-control" placeholder="Enter your email" />
                     <input type="button" class="btn btn-primary mt-3" value="Subscribe" />
                 </p>
                 <!-- <p class="title mt-3">&nbsp;</p>
@@ -246,6 +254,23 @@
                 once: true
             });
         });
+    
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = 'http://localhost/double/blog.html';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = '358903849538059'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://doubbletest.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
     </script>
 </body>
 
