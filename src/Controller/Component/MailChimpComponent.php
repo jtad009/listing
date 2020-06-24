@@ -16,67 +16,73 @@ class MailChimpComponent extends Component
      * @var array
      */
     protected $_defaultConfig = [];
-    
-    private $_url = 'https://:datacenter.api.mailchimp.com/3.0/lists/'. AUDIENCE_ID . '/members'; 
-/**
- * Add new contact to mailchimp maillist
- * @param string $email
- * @return array|null
- */
-    public function addContact($email) {
-        $dataCenter = substr(MAILCHIMP_API_KEY, strpos(MAILCHIMP_API_KEY, '-')+1);
+
+    private $_url = 'https://:datacenter.api.mailchimp.com/3.0/lists/' . AUDIENCE_ID . '/members';
+
+    /**
+     * Add new contact to mailchimp maillist
+     * @param string $email the email ti add
+     * @return array|null
+     */
+    public function addContact($email)
+    {
+        $dataCenter = substr(MAILCHIMP_API_KEY, strpos(MAILCHIMP_API_KEY, '-') + 1);
         $url = Text::insert($this->_url, ['datacenter' => $dataCenter]);
 
         $options = [
-            'endpoint_url'=>$url,
-            'type'=>'POST',
-            'api_key'=>MAILCHIMP_API_KEY,
-            'url_params'=> [
+            'endpoint_url' => $url,
+            'type' => 'POST',
+            'api_key' => MAILCHIMP_API_KEY,
+            'url_params' => [
                 'email_address' => $email,
                 'status' => 'subscribed',
-            ]
-           
+            ],
+
         ];
-        
+
         return $this->sendToMailChimpApi($options);
     }
-/**
- * Update a mailchimp contact
- * @param string $id mail_chimp_id
- * @param string $email
- * @return array|null
- */
-    public function updateContact($id,$email) {
-        $dataCenter = substr(MAILCHIMP_API_KEY, strpos(MAILCHIMP_API_KEY, '-')+1);
+
+    /**
+     * Update a mailchimp contact
+     * @param string $id mail_chimp_id
+     * @param string $email the email to update
+     * @return array|null
+     */
+    public function updateContact($id, $email)
+    {
+        $dataCenter = substr(MAILCHIMP_API_KEY, strpos(MAILCHIMP_API_KEY, '-') + 1);
         $url = Text::insert($this->_url, ['datacenter' => $dataCenter]);
 
         $options = [
-            'endpoint_url'=>$url.'/'.$id,
-            'type'=>'PUT',
-            'api_key'=>MAILCHIMP_API_KEY,
-            'url_params'=> [
+            'endpoint_url' => $url . '/' . $id,
+            'type' => 'PUT',
+            'api_key' => MAILCHIMP_API_KEY,
+            'url_params' => [
                 'email_address' => $email,
                 'status' => 'subscribed',
-            ]
-           
+            ],
+
         ];
-      
+
         return $this->sendToMailChimpApi($options);
     }
+
     /**
      * Curl connection to mailChimp
-     * @param array $options
+     * @param array $params array to send to API
      * @return array| null
      */
-    private function sendToMailChimpApi($params) { 
+    private function sendToMailChimpApi($params)
+    {
         $ch = curl_init();
         $endPoint = $params['endpoint_url'];
         curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-        curl_setopt($ch, CURLOPT_USERPWD, 'user:'. $params['api_key']);
+        curl_setopt($ch, CURLOPT_USERPWD, 'user:' . $params['api_key']);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params['url_params']));
         if ('POST' === $params['type']) {
-           curl_setopt($ch, CURLOPT_POST, 1);
-        } else if( 'PUT' === $params['type'] ){
+            curl_setopt($ch, CURLOPT_POST, 1);
+        } elseif ('PUT' === $params['type']) {
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
         }
 
@@ -89,7 +95,7 @@ class MailChimpComponent extends Component
         curl_close($ch);
 
         $responseArray = json_decode($response, true);
-       
+
         //Check to see if errors occured then dump errors
         if (isset($responseArray['error_type'])) {
             die();

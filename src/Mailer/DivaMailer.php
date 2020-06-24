@@ -2,11 +2,11 @@
 
 namespace App\Mailer;
 
-use Cake\Mailer\Mailer;
-use Cake\Event\Event;
-use Cake\Datasource\EntityInterface;
-use Cake\Log\Log;
 use Cake\Datasource\ConnectionManager;
+use Cake\Datasource\EntityInterface;
+use Cake\Event\Event;
+use Cake\Log\Log;
+use Cake\Mailer\Mailer;
 use Cake\Network\Exception\NotFoundException;
 
 /**
@@ -15,48 +15,31 @@ use Cake\Network\Exception\NotFoundException;
 class DivaMailer extends Mailer
 {
 
-    static public $name = 'Diva';
+    public static $name = 'Diva';
 
-    public function contact($data)
+    /**
+     * Send email to contact
+     * @return null
+     */
+    public function contact()
     {
-
-        $this->setTo(APP_EMAIL)
-            ->setSubject($data['subject'] . ' - Divapad Contact-us Page')
-            ->set(array(
-                'fullname' => $data['first_name'] . ' ' . $data['last_name'],
-                'email' => $data['email'],
-                'city' => $data['city'],
-                'state' => $data['state'],
-                'email' => $data['email'],
-                'message' => $data['information']
-            ));
-
-
-        $this->setEmailFormat('html');
+        return null;
     }
+
     /**
      * Send new distributor email to divapad contact email
      * @param array $data arry of didtributor information
-     * 
+     * @return null
      */
     public function distributor($data)
     {
-
-        $this->setTo(APP_EMAIL)
-            ->setSubject('Divapad Distributor Request')
-            ->set(array(
-                'fullname' => $data['first_name'] . ' ' . $data['last_name'],
-                'email' => $data['email'],
-                'phone' => $data['phone'],
-                
-            ));
-
-
-        $this->setEmailFormat('html');
+        return null;
     }
+
     /**
-     *Forgot Password emailer
-     *@param array $user the details of the user who forgot his password
+     * Forgot Password emailer
+     * @param array $user the details of the user who forgot his password
+     * @return void
      */
     public function blogForgot($user)
     {

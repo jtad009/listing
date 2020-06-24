@@ -4,9 +4,10 @@ namespace App\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Controller\ComponentRegistry;
-use Cake\Filesystem\Folder;
 use Cake\Datasource\ConnectionManager;
+use Cake\Filesystem\Folder;
 use Cake\I18n\Date;
+
 /**
  * Instagram component
  */
@@ -27,23 +28,27 @@ class InstagramComponent extends Component
      * @var array
      */
     protected $_defaultConfig = [];
+
     /**
      * Constuctor method for this class
      * @param array $params default config passed to this class
+     * @return void
      */
     public function initialize(array $params)
     {
         $this->_defaultConfig = $params;
-       
-        //Save instagram code 
+
+        //Save instagram code
         $this->_getCode = $this->_defaultConfig['get_code'];
         //get access token
         $this->_setUserInstagramAccessToken();
         //Get auth URL
         $this->setAuthorizationUrl();
     }
+
     /**
      * Build Authorization URl
+     * @return void
      */
     public function setAuthorizationUrl()
     {
@@ -51,14 +56,18 @@ class InstagramComponent extends Component
             'client_id' => INSTAGRAM_CLIENT_ID,
             'redirect_uri' => BASE_DOMAIN,
             'scope' => 'user_profile,user_media',
-            'response_type' => 'code'
+            'response_type' => 'code',
         ];
         $this->authorizationUrl = $this->_apiBaseUrl . 'oauth/authorize?' . http_build_query($getVars);
     }
 
+    /**
+     * Persist user token to db
+     * @return void
+     */
     private function _setUserInstagramAccessToken()
     {
-        if ( $this->_defaultConfig['get_code'] ) {
+        if ($this->_defaultConfig['get_code']) {
             $userAccessTokenResponse = $this->_getUserAccessToken();
             $this->_userAccessToken = $userAccessTokenResponse['access_token'];
             $this->hasUserAccessToken = true;
@@ -79,17 +88,20 @@ class InstagramComponent extends Component
 
     /**
      * Get the user profile information, incase you need to save it
+     * @return array
      */
-    public function getUser(){
+    public function getUser()
+    {
         $params = [
             'endpoint_url' => $this->_graphBaseUrl . 'me',
             'type' => 'GET',
             'url_params' => [
                 'fields' => 'id, username, media_count, email',
 
-            ]
+            ],
         ];
         $response = $this->_makeApiCall($params);
+
         return $response;
     }
 
@@ -97,35 +109,40 @@ class InstagramComponent extends Component
      * Get the user Media information
      * @return array|null
      */
-    public function getUserMedia(){
+    public function getUserMedia()
+    {
         $params = [
-            'endpoint_url' => $this->_graphBaseUrl . $this->_userId. '/media',
+            'endpoint_url' => $this->_graphBaseUrl . $this->_userId . '/media',
             'type' => 'GET',
             'url_params' => [
                 'fields' => 'id, caption, media_type, media_url',
 
-            ]
+            ],
         ];
         $response = $this->_makeApiCall($params);
+
         return $response;
     }
+
     /**
      * Pagination for user profile
-     * @param string $pagingEndpoint 
+     * @param string $pagingEndpoint id for next page
      * @return array|null
      */
-    public function getMediaPaging ($pagingEndpoint){
+    public function getMediaPaging($pagingEndpoint)
+    {
         $params = [
-            'endpoint_url' => $pagingEndpoint, 
+            'endpoint_url' => $pagingEndpoint,
             'type' => 'GET',
             'url_params' => [
                 'paging' => true,
-
-            ]
+            ],
         ];
         $response = $this->_makeApiCall($params);
+
         return $response;
     }
+
     /**
      * Get instagrams Long lived access token that expires in 60 days
      * @return array|null
@@ -139,36 +156,41 @@ class InstagramComponent extends Component
                 'client_secret' => INSTAGRAM_CLIENT_SECRET,
                 'grant_type' => 'ig_exchange_token',
 
-            ]
+            ],
         ];
         $response = $this->_makeApiCall($params);
+
         return $response;
     }
-     /**
+
+    /**
      * Refresh instagrams Long lived access token only when it's been 31days  old
      * SINCE TOKENS die after 60 days.
+     * @return void
      */
     public function getLongLivedUserRefreshToken()
     {
-        if(ceil((time()-strtotime($this->_lastModified))/86400) > 31){
-             $params = [
+        if (ceil((time() - strtotime($this->_lastModified)) / 86400) > 31) {
+            $params = [
                 'endpoint_url' => $this->_graphBaseUrl . 'refresh_access_token',
                 'type' => 'GET',
                 'url_params' => [
                     'client_secret' => INSTAGRAM_CLIENT_SECRET,
                     'grant_type' => 'ig_refresh_token',
-                    'access_token' => $this->getUserAccessToken()
-                ]
+                    'access_token' => $this->getUserAccessToken(),
+                ],
             ];
             $response = $this->_makeApiCall($params);
             $this->saveToken([
                 'long_token' => $response['access_token'],
                 'expires_in' => $response['expires_in'],
             ]);
-        } 
+        }
     }
+
     /**
      * Make params that will be sent to the api endpoint for token collection
+     * @return array
      */
     private function _getUserAccessToken()
     {
@@ -180,17 +202,18 @@ class InstagramComponent extends Component
                 'app_secret' => INSTAGRAM_CLIENT_SECRET,
                 'grant_type' => 'authorization_code',
                 'redirect_uri' => BASE_DOMAIN,
-                'code' => $this->_getCode
-            ]
+                'code' => $this->_getCode,
+            ],
         ];
         $response = $this->_makeApiCall($params);
+
         return $response;
     }
 
     /**
      * Make call to endpoint using curl
      * @param array $params an array of configs to pass to endpoint
-     * @return array|null 
+     * @return array|null
      */
     private function _makeApiCall($params)
     {
@@ -223,6 +246,7 @@ class InstagramComponent extends Component
             return $responseArray;
         }
     }
+
     /**
      * Returns user access token
      * @return string user accesstoken
@@ -231,21 +255,23 @@ class InstagramComponent extends Component
     {
         return $this->_userAccessToken;
     }
+
     /**
      * Returns user access token expiry date
      * @return string user expires in seconds
      */
     public function getUserAccessTokenExpires()
     {
-        return ceil($this->_userAccessTokenExpires  / 86400);
+        return ceil($this->_userAccessTokenExpires / 86400);
     }
+
     /**
-     * Persist the token sent 
+     * Persist the token sent
      * @param array $fields an array of fields
+     * @return void
      */
     private function saveToken($fields = [])
     {
-
         //Search for record first
         $existingTokens = $this->fetchSavedToken();
         if (!$existingTokens) {
@@ -256,7 +282,7 @@ class InstagramComponent extends Component
                     $fields['user_id'],
                     $fields['short_token'],
                     $fields['long_token'],
-                    $fields['expires_in']
+                    $fields['expires_in'],
                 ]
             );
         } else {
@@ -264,28 +290,31 @@ class InstagramComponent extends Component
                 ConnectionManager::get('blog')->execute(
                     "UPDATE  oauths SET long_token = ?, expires_in = ? , modified=NOW() WHERE id = ? ",
                     [
-                        
                         $fields['long_token'],
                         $fields['expires_in'],
                         $existingTokens['id'],
-                        
                     ]
                 );
             }
         }
     }
 
+    /**
+     * Fetch token saved in DB
+     * @return array|false
+     */
     public function fetchSavedToken()
     {
-        $savedAccessToken =  ConnectionManager::get('blog')->execute('SELECT * FROM oauths')->fetch('assoc');
-       
-        if($savedAccessToken){ //if it is not false
+        $savedAccessToken = ConnectionManager::get('blog')->execute('SELECT * FROM oauths')->fetch('assoc');
+        if ($savedAccessToken) { //if it is not false
             $this->hasUserAccessToken = true;
             $this->_userAccessToken = $savedAccessToken['long_token'];
             $this->_userId = $savedAccessToken['userId'];
             $this->_lastModified = $savedAccessToken['modified'];
+
             return $savedAccessToken;
         }
-       return false;
+
+        return false;
     }
 }

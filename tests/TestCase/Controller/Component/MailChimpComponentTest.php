@@ -7,6 +7,7 @@ use Cake\Http\Response;
 use Cake\Http\ServerRequest;
 use Cake\TestSuite\TestCase;
 use Faker;
+
 /**
  * App\Controller\Component\MailChimpComponent Test Case
  */
@@ -21,6 +22,7 @@ class MailChimpComponentTest extends TestCase
     public $contactId = 'e586d6051fc831346d61ddb90eb36bac';
     public $faker;
     public $email;
+
     /**
      * setUp method
      *
@@ -33,10 +35,6 @@ class MailChimpComponentTest extends TestCase
 
         $registry = new ComponentRegistry();
         $this->MailChimp = new MailChimpComponent($registry);
-
-        
-       
-        
     }
 
     /**
@@ -61,7 +59,7 @@ class MailChimpComponentTest extends TestCase
         $this->email = $this->faker->companyEmail;
         $response = $this->MailChimp->addContact($this->email);
         $this->assertArrayHasKey('email_address', $response);
-        $this->assertEquals($response['email_address'],$this->email);
+        $this->assertEquals($response['email_address'], $this->email);
     }
 
     /**
@@ -74,7 +72,7 @@ class MailChimpComponentTest extends TestCase
     //     $this->email = $this->faker->companyEmail;
     //     $this->contactId = '4983e6809be01d81c337ff890f9360b7';
     //     $response = $this->MailChimp->updateContact($this->contactId,$this->email);
-    
+
     //    $this->assertArrayHasKey('email_address', $response);
     //     $this->assertEquals($response['id'],$this->contactId);
     //     $this->assertEquals($response['email_address'],$this->email);

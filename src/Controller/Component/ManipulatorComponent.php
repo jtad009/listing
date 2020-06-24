@@ -9,7 +9,8 @@ use Cake\Filesystem\Folder;
 /**
  * Upload component
  */
-class ManipulatorComponent extends Component {
+class ManipulatorComponent extends Component
+{
 
     /**
      * @var int
@@ -28,8 +29,8 @@ class ManipulatorComponent extends Component {
 
     /**
      * Image manipulator constructor
-     * 
-     * @param string $file OPTIONAL Path to image file or image data as string
+     *
+     * @param string $option OPTIONAL Path to image file or image data as string
      * @return void
      */
     public function initialize(array $option)
@@ -45,14 +46,13 @@ class ManipulatorComponent extends Component {
 
     /**
      * Set image resource from file
-     * 
+     *
      * @param string $file Path to image file
      * @return ImageManipulator for a fluent interface
      * @throws InvalidArgumentException
      */
     public function setImageFile($file)
     {
-        
         if (!(is_readable($file) && is_file($file))) {
             throw new InvalidArgumentException("Image file $file is not readable");
         }
@@ -64,26 +64,26 @@ class ManipulatorComponent extends Component {
         list ($this->width, $this->height, $type) = getimagesize($file);
 
         switch ($type) {
-            case IMAGETYPE_GIF  :
+            case IMAGETYPE_GIF:
                 $this->image = imagecreatefromgif($file);
                 break;
-            case IMAGETYPE_JPEG :
+            case IMAGETYPE_JPEG:
                 $this->image = imagecreatefromjpeg($file);
                 break;
-            case IMAGETYPE_PNG  :
+            case IMAGETYPE_PNG:
                 $this->image = imagecreatefrompng($file);
                 break;
-            default             :
+            default:
                 throw new InvalidArgumentException("Image type $type not supported");
         }
 
         return $this;
     }
-    
+
     /**
      * Set image resource from string data
-     * 
-     * @param string $data
+     *
+     * @param string $data string rep of data
      * @return ImageManipulator for a fluent interface
      * @throws RuntimeException
      */
@@ -98,6 +98,7 @@ class ManipulatorComponent extends Component {
         }
         $this->width = imagesx($this->image);
         $this->height = imagesy($this->image);
+
         return $this;
     }
 
@@ -110,49 +111,35 @@ class ManipulatorComponent extends Component {
      * @return ImageManipulator for a fluent interface
      * @throws RuntimeException
      */
-    // public function resample($width, $height, $constrainProportions = true)
-    // {
-    //     if (!is_resource($this->image)) {
-    //         throw new RuntimeException('No image set');
-    //     }
-    //     if ($constrainProportions) {
-    //         if ($this->height >= $this->width) {
-    //             $width  = round($height / $this->height * $this->width);
-    //         } else {
-    //             $height = round($width / $this->width * $this->height);
-    //         }
-    //     }
-    //     $temp = imagecreatetruecolor($width, $height);
-    //     imagecopyresampled($temp, $this->image, 0, 0, 0, 0, $width, $height, $this->width, $this->height);
-    //     return $this->_replace($temp);
-    // }
     public function resample($width, $height, $constrainProportions = true)
-{
-    if (!is_resource($this->image)) {
-        throw new RuntimeException('No image set');
-    }
-    if ($constrainProportions) {
-        if ($this->height >= $this->width) {
-            $width  = round($height / $this->height * $this->width);
-        } else {
-            $height = round($width / $this->width * $this->height);
+    {
+        if (!is_resource($this->image)) {
+            throw new RuntimeException('No image set');
         }
-    }
+        if ($constrainProportions) {
+            if ($this->height >= $this->width) {
+                $width = round($height / $this->height * $this->width);
+            } else {
+                $height = round($width / $this->width * $this->height);
+            }
+        }
 
-    $temp = imagecreatetruecolor($width, $height);
+        $temp = imagecreatetruecolor($width, $height);
 
     // PNG/GIF Transparency
-    imagealphablending($temp, false);
-    imagesavealpha($temp,true);
-    $transparent = imagecolorallocatealpha($temp, 255, 255, 255, 127);
-    imagefilledrectangle($temp, 0, 0, $width, $height, $transparent);
+        imagealphablending($temp, false);
+        imagesavealpha($temp, true);
+        $transparent = imagecolorallocatealpha($temp, 255, 255, 255, 127);
+        imagefilledrectangle($temp, 0, 0, $width, $height, $transparent);
 
-    imagecopyresampled($temp, $this->image, 0, 0, 0, 0, $width, $height, $this->width, $this->height);
-    return $this->_replace($temp);
-}
+        imagecopyresampled($temp, $this->image, 0, 0, 0, 0, $width, $height, $this->width, $this->height);
+
+        return $this->_replace($temp);
+    }
+
     /**
      * Enlarge canvas
-     * 
+     *
      * @param int   $width  Canvas width
      * @param int   $height Canvas height
      * @param array $rgb    RGB colour values
@@ -161,35 +148,36 @@ class ManipulatorComponent extends Component {
      * @return ImageManipulator for a fluent interface
      * @throws RuntimeException
      */
-    public function enlargeCanvas($width, $height, array $rgb = array(), $xpos = null, $ypos = null)
+    public function enlargeCanvas($width, $height, array $rgb = [], $xpos = null, $ypos = null)
     {
         if (!is_resource($this->image)) {
             throw new RuntimeException('No image set');
         }
-        
+
         $width = max($width, $this->width);
         $height = max($height, $this->height);
-        
+
         $temp = imagecreatetruecolor($width, $height);
         if (count($rgb) == 3) {
             $bg = imagecolorallocate($temp, $rgb[0], $rgb[1], $rgb[2]);
             imagefill($temp, 0, 0, $bg);
         }
-        
+
         if (null === $xpos) {
             $xpos = round(($width - $this->width) / 2);
         }
         if (null === $ypos) {
             $ypos = round(($height - $this->height) / 2);
         }
-        
-        imagecopy($temp, $this->image, (int) $xpos, (int) $ypos, 0, 0, $this->width, $this->height);
+
+        imagecopy($temp, $this->image, (int)$xpos, (int)$ypos, 0, 0, $this->width, $this->height);
+
         return $this->_replace($temp);
     }
-    
+
     /**
      * Crop image
-     * 
+     *
      * @param int|array $x1 Top left x-coordinate of crop box or array of coordinates
      * @param int       $y1 Top left y-coordinate of crop box
      * @param int       $x2 Bottom right x-coordinate of crop box
@@ -205,25 +193,25 @@ class ManipulatorComponent extends Component {
         if (is_array($x1) && 4 == count($x1)) {
             list($x1, $y1, $x2, $y2) = $x1;
         }
-        
+
         $x1 = max($x1, 0);
         $y1 = max($y1, 0);
-        
+
         $x2 = min($x2, $this->width);
         $y2 = min($y2, $this->height);
-        
+
         $width = $x2 - $x1;
         $height = $y2 - $y1;
-        
+
         $temp = imagecreatetruecolor($width, $height);
         imagecopy($temp, $this->image, 0, 0, $x1, $y1, $width, $height);
-        
+
         return $this->_replace($temp);
     }
-    
+
     /**
      * Replace current image resource with a new one
-     * 
+     *
      * @param resource $res New image resource
      * @return ImageManipulator for a fluent interface
      * @throws UnexpectedValueException
@@ -239,83 +227,54 @@ class ManipulatorComponent extends Component {
         $this->image = $res;
         $this->width = imagesx($res);
         $this->height = imagesy($res);
+
         return $this;
     }
-    
+
     /**
      * Save current image to file
-     * 
-     * @param string $fileName
+     *
+     * @param string $fileName file name
+     * @param string $type file type
      * @return void
      * @throws RuntimeException
      */
-    // public function save($fileName, $type = IMAGETYPE_JPEG)
-    // {
-    //     $dir = dirname($fileName);
-    //     if (!is_dir($dir)) {
-    //         if (!mkdir($dir, 0755, true)) {
-    //             throw new RuntimeException('Error creating directory ' . $dir);
-    //         }
-    //     }
-        
-    //     try {
-    //         switch ($type) {
-    //             case IMAGETYPE_GIF  :
-    //                 if (!imagegif($this->image, $fileName)) {
-    //                     throw new RuntimeException;
-    //                 }
-    //                 break;
-    //             case IMAGETYPE_PNG  :
-    //                 if (!imagepng($this->image, $fileName)) {
-    //                     throw new RuntimeException;
-    //                 }
-    //                 break;
-    //             case IMAGETYPE_JPEG :
-    //             default             :
-    //                 if (!imagejpeg($this->image, $fileName, 95)) {
-    //                     throw new RuntimeException;
-    //                 }
-    //         }
-    //     } catch (Exception $ex) {
-    //         throw new RuntimeException('Error saving image file to ' . $fileName);
-    //     }
-    // }
-public function save($fileName, $type = IMAGETYPE_PNG)
-{
-    $dir = dirname($fileName);
-    if (!is_dir($dir)) {
-        if (!mkdir($dir, 0755, true)) {
-            throw new RuntimeException('Error creating directory ' . $dir);
+    public function save($fileName, $type = IMAGETYPE_PNG)
+    {
+        $dir = dirname($fileName);
+        if (!is_dir($dir)) {
+            if (!mkdir($dir, 0755, true)) {
+                throw new RuntimeException('Error creating directory ' . $dir);
+            }
+        }
+
+        try {
+            switch ($type) {
+                case IMAGETYPE_GIF:
+                    if (!imagegif($this->image, $fileName)) {
+                        throw new RuntimeException();
+                    }
+                    break;
+                case IMAGETYPE_PNG:
+                    // PNG Transparency
+                    imagealphablending($this->image, false);
+                    imagesavealpha($this->image, true);
+
+                    if (!imagepng($this->image, $fileName)) {
+                        throw new RuntimeException();
+                    }
+                    break;
+                case IMAGETYPE_JPEG:
+                default:
+                    if (!imagejpeg($this->image, $fileName, 95)) {
+                        throw new RuntimeException();
+                    }
+            }
+        } catch (Exception $ex) {
+            throw new RuntimeException('Error saving image file to ' . $fileName);
         }
     }
 
-    try {
-        switch ($type) {
-            case IMAGETYPE_GIF  :
-                if (!imagegif($this->image, $fileName)) {
-                    throw new RuntimeException;
-                }
-                break;
-            case IMAGETYPE_PNG  :
-
-                // PNG Transparency
-                imagealphablending($this->image, false);
-                imagesavealpha($this->image,true);
-
-                if (!imagepng($this->image, $fileName)) {
-                    throw new RuntimeException;
-                }
-                break;
-            case IMAGETYPE_JPEG :
-            default             :
-                if (!imagejpeg($this->image, $fileName, 95)) {
-                    throw new RuntimeException;
-                }
-        }
-    } catch (Exception $ex) {
-        throw new RuntimeException('Error saving image file to ' . $fileName);
-    }
-}
     /**
      * Returns the GD image resource
      *
@@ -345,7 +304,4 @@ public function save($fileName, $type = IMAGETYPE_PNG)
     {
         return $this->height;
     }
-
-   
-
 }

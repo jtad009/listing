@@ -32,21 +32,31 @@ use Cake\View\Exception\MissingTemplateException;
 class PagesController extends AppController
 {
     use MailerAwareTrait;
+
     private $_igData;
+
     /**
      * This route exposes the Frequently asked question route
+     * @return void
      */
     public function faqs()
     {
         $this->set('page', 'faqs');
     }
+
     /**
      * This route exposes the main page
+     * @return void
      */
     public function home()
     {
         $this->set('page', 'home');
     }
+
+    /**
+     * Load IG Feeds for a Business
+     * @return void
+     */
     public function loadIgPost()
     {
         $this->autoRender = false;
@@ -57,7 +67,6 @@ class PagesController extends AppController
                 if (isset($_GET['goto'])) {
                     echo json_encode($this->Instagram->getMediaPaging($_GET['goto']));
                 } else {
-                    
                     echo json_encode($this->Instagram->getUserMedia());
                 }
             } else {
@@ -67,46 +76,57 @@ class PagesController extends AppController
 
         exit();
     }
+
     /**
      * This route exposes the Terms  route
+     * @return void
      */
     public function terms()
     {
         $this->set('page', 'terms');
     }
+
     /**
      * This route exposes the Rewards Product route
+     * @return void
      */
     public function rewardProduct()
     {
-       
-
         $this->set('page', 'reward');
     }
+
     /**
      * This route exposes the Target Product route
+     * @return void
      */
     public function targetProduct()
     {
-
         $this->set('page', 'target');
     }
+
     /**
      * This route exposes the Fixed Product route
+     * @return void
      */
     public function fixedProduct()
     {
         $this->set('page', 'fixed');
     }
+
     /**
      * This route exposes the Reviews route
+     * @return void
      */
     public function review()
     {
         $this->set('page', 'reviews');
     }
+
+    /**
+     * Not existing method for making test pass if page isn't found
+     * @return void
+     */
     public function notExisting()
     {
-
     }
 }
