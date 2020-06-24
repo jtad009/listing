@@ -52,11 +52,11 @@ class PagesControllerTest extends IntegrationTestCase
         $this->assertResponseOk();
 
         $this->assertHtml(['h1' => true], '<h1>The Wealth you want tomorrow, Starts Here.</h1>');
-        $this->assertResponseContains('Save and Invest for your future in Naira & Dollars.');
+        $this->assertResponseContains('Save and Invest for your future in Naira & Dollars');
         //section 2
         $this->assertResponseContains('You are not just saving, but investing in a guaranteed system that has very little risk but gives very high returns');
         $this->assertHtml(['p' => true], "<p>Whether you're saving towards paying your rent, funding your business, education or just saving for the future, there's an investment plan that suits you on Doubble.</p>");
-        $this->assertResponseContains('With Doubble, your money is as secure as in a bank and is insured by NDIC. Even if something happens to Sterling Bank (and nothing will), your money and interest is secure');
+        $this->assertResponseContains('Doubble is backed by a commercial bank that has been in business for about 60 years and whose funds are protected and insured by the NDIC');
 
         //Fixed investment
         $this->assertHtml(['p' => true], "<p>Earn the best interest rates available in Nigeria on your existing Naira and USD savings with the Doubble fixed investemt plan.</p>");
@@ -67,7 +67,7 @@ class PagesControllerTest extends IntegrationTestCase
         $this->assertHtml(['p' => true], "<p>With Doubble rewards investment plans, you can make monthly contributions over a period of time and make as much as twice your money in value. Explore the Doubble rewards variants below</p>");
 
         //DO more than invest section
-        $this->assertHtml(['p' => true], "<p>You can give the best gift known to man, Money. Cash gifts to reward a spouse, child/children, parent or anyone else of choice.</p");
+        $this->assertHtml(['p' => true], "<p>You can give the best gift known to man - Money. Simply open an investment plan in the beneficiary’s name and account number and they start earning returns.</p");
         $this->assertHtml(['p' => true], "<p>Flexible repayment system which empowers you to plan towards future consistent cash outflows. You can decide to receive your interest repayment either monthly or as a lump sum.</p>");
         $this->assertHtml(['p' => true], "<p>You can start your investment process all by yourself on this platform and select a convenient date and time for your investment to commence.<p>");
 

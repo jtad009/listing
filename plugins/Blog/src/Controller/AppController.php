@@ -7,18 +7,9 @@ use Cake\Event\Event;
 
 class AppController extends BaseController
 {
-    public function beforeRender(event $event)
-    {
-        $this->SkoleUtil->setCorsHeaders();
-    }
 
     public function beforeFilter(Event $event)
     {
-
-        if ($this->request->is('options')) {
-            $this->SkoleUtil->setCorsHeaders();
-            return $this->response;
-        }
         $this->Auth->allow(['articles.index', 'authors.add', 'categories.index', 'subscriptions.add']);
 
         return parent::beforeFilter($event);

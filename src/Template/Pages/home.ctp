@@ -8,7 +8,7 @@
             want tomorrow,
             Starts Here.
         </h1>
-        <p class="subtitle" style="top: 253px !important; font-size:20px !important;" data-aos="zoom-in"> Save and Invest for your future in Naira & Dollars.</p>
+        <p class="subtitle" style="top: 253px !important; font-size:20px !important;" data-aos="zoom-in"> Save and Invest for your future in Naira & Dollars</p>
         <a href="https://apply.doubble.ng/" target="_blank" style="top: 309px !important;" class="btn btn-primary" data-aos="zoom-in">INVEST
             NOW</a>
     </div>
@@ -19,7 +19,7 @@
             want tomorrow,
             Starts Here.
         </h1>
-        <p class="subtitle-sm details" data-aos="zoom-in"> Save and Invest for your future in Naira & Dollars.</p>
+        <p class="subtitle-sm details" data-aos="zoom-in"> Save and Invest for your future in Naira & Dollars</p>
         <br />
         <br />
         <a href="https://apply.doubble.ng/" target="_blank" class="btn btn-primary mt-4 sm-screen" data-aos="zoom-in">INVEST NOW</a>
@@ -73,11 +73,11 @@
                 <b class="d-none d-lg-block pt-2 pb-2 text-center" style="font-size: 16px;color: var(--primary-color);"> Bank-Grade Security</b>
                 <b class="d-block d-lg-none pt-2 pb-2 text-center" style="font-weight: 600; color: var(--primary-color);"> Bank-Grade Security</b>
                 <p class="d-none d-lg-block text-justify" style="line-height: 33px;font-size: 14px;color: var(--primary-color);">
-                    With Doubble, your money is as secure as in a bank and is insured by NDIC. Even if something happens to Sterling Bank (and nothing will), your money and interest is secure
+                Doubble is backed by a commercial bank that has been in business for about 60 years and whose funds are protected and insured by the NDIC.
                 </p>
 
                 <p class="d-block d-lg-none text-justify" style="line-height: 53px;">
-                    With Doubble, your money is as secure as in a bank and is insured by NDIC. Even if something happens to Sterling Bank (and nothing will), your money and interest is secure
+                Doubble is backed by a commercial bank that has been in business for about 60 years and whose funds are protected and insured by the NDIC.
                 </p>
             </div>
         </div>
@@ -110,10 +110,10 @@
 
 
                     <p class="subtitle d-none d-lg-block text-justify" style="font-size: 14px;color: var(--primary-color);font-weight: 100;">
-                        With Doubble rewards investment plans, you can make monthly contributions over a period of time and make as much as twice your money in value. Explore the Doubble rewards variants below
+                        With Doubble rewards investment plans, you can make monthly contributions over a period of time and make as much as twice your money in value.<br/> Explore the Doubble rewards variants below:
                     </p>
                     <p class="subtitle details d-block d-lg-none text-justify">
-                        With Doubble rewards investment plans, you can make monthly contributions over a period of time and make as much as twice your money in value. Explore the Doubble rewards variants below
+                        With Doubble rewards investment plans, you can make monthly contributions over a period of time and make as much as twice your money in value. <br/>Explore the Doubble rewards variants below:
                     </p>
                     <div>
                         <div class="accordion" id="accordionExample">
@@ -128,7 +128,7 @@
 
                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                     <div class="card-body details text-justify">
-                                        This is a 6 - year investment contract that offers a 25% return on invested funds. Monthly contributions are made by you for the first 3 years and your invested amount plus returns are paid to you every month for the next 3 years
+                                        This is a 6 - year investment contract that offers a 25% return on invested funds. Monthly contributions are made by you for the first 3 years and your invested amount plus returns are paid to you every month for the next 3 years.
                                     </div>
                                 </div>
                             </div>
@@ -263,12 +263,10 @@
                             <h6 class="title-sm d-block d-lg-none " style="font-size: 40px;"> Gift Your Investment </h6>
 
                             <p class="subtitle d-none d-lg-block text-justify" style="line-height:28px; font-size: 14px;color: var(--primary-color);font-weight: lighter;">
-                                You can give the best gift known to man, Money. Cash gifts to reward a
-                                spouse, child/children, parent or anyone else of choice.
+                            You can give the best gift known to man - Money. Simply open an investment plan in the beneficiary’s name and account number and they start earning returns.
                             </p>
                             <p class="subtitle d-block d-lg-none " style="font-size: 42px;">
-                                You can give the best gift known to man, Money. Cash gifts to reward a
-                                spouse, child/children, parent or anyone else of choice.
+                            You can give the best gift known to man - Money. Simply open an investment plan in the beneficiary’s name and account number and they start earning returns.
                             </p>
 
                         </div>
@@ -290,14 +288,12 @@
 
 
                             <p class="subtitle d-none d-lg-block text-justify" style="line-height:28px;font-size: 14px;color: var(--primary-color);font-weight: normal;">
-                                Flexible repayment system which empowers you to plan towards future
-                                consistent cash outflows. You can decide to receive your interest repayment either
-                                monthly or as a lump sum.
+                            We have designed a flexible interest payment schedule that allows you to decide when to receive your interest repayment, either monthly or as a lump sum.
+
                             </p>
                             <p class="subtitle d-block d-lg-none " style="font-size: 44px;">
-                                Flexible repayment system which empowers you to plan towards future
-                                consistent cash outflows. You can decide to receive your interest repayment either
-                                monthly or as a lump sum.
+                            We have designed a flexible interest payment schedule that allows you to decide when to receive your interest repayment, either monthly or as a lump sum.
+
                             </p>
                         </div>
                     </div>

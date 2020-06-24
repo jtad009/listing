@@ -104,4 +104,5 @@ define('MAILCHIMP_API_KEY', 'dcf34959daf5fc3477120ca03d83589d-us10');
 define('DISCUS_URL', 'https://doubbletest.disqus.com/embed.js');
 define('LOGO_PATH', 'logo.svg');
 define('BG', 'bg-white');
+define("NO_ARTICLE", "No Articles Published At this Time.");
 // "@php -r \"file_exists('config/app.php') || copy('config/app.default.php', 'config/app.php');\"",

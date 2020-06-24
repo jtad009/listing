@@ -3,40 +3,82 @@
 /**
  * @var \App\View\AppView $this
  */
-$end = count($articles) + 1;
-if (count($articles) > 5) {
-  $end = intval(count($articles) * 0.7);
+$articleData = $articles->toArray();
+
+
+/**
+ * Split array into section as required by design. 
+ * this is done in view instead of controller 
+ * so it's independent of controller logic
+ * @param array $array array to split
+ * @param int $parts how many parts you want inside each part
+ * @return array
+ */
+function splitArray($array, $parts){
+  $n = $parts;
+  $result = [[],[],[]];
+  $wordsPerLine = 3;
+  $arrayLength = count($array);
+  $totalPossibleStep =  ceil( $arrayLength / $wordsPerLine);
+
+  for ( $line = 0; $line < $n; $line++) {
+    if($line == $totalPossibleStep){
+      break;
+    }
+    for ($i = 0; $i < $wordsPerLine; $i++) {
+      $currentLine = $i + $line * $wordsPerLine;
+      if($currentLine == $arrayLength){ //check if we still have items
+        break;
+      }
+      $value = $array[$currentLine];
+     
+      if (is_null($value)){
+      break; 
+      } 
+      array_push($result[$line], $value);
+    }
+    
+  }
+  return $result;
 }
-
-
+$result = splitArray($articleData, 3);
 
 ?>
 
 
-<div class="row two">
+<div class="row two" <?= !empty($result[0]) ?: 'style="height:48`vh"'?>>
   <div class="col-md-10 mx-auto mt-4">
+  <?php if(!empty($result[0])) : ?>
     <h2 class="title mt-3 blogTitle">Popular</h2>
+    <?php endif; ?>
   </div>
+  
   <div class="col-md-10 mx-auto mt-3">
     <div class="row blog ">
-      <?php foreach ($articles as $article) : ?>
+      <?php if(empty($result[0])) : ?>
+        <h1 class="title mt-3 blogTitle text-center w-100 d-none d-lg-block"> <?= NO_ARTICLE ?></h1>
+        <h1 class="title mt-3 blogTitle text-center w-100 d-block d-lg-none"> <?= NO_ARTICLE ?></h1>
+      <?php endif; ?>
+      <?php foreach ($result[0] as $article) : ?>
         <?= $this->element('post-card-1', ['slug' => $article->slug, 'title' => $article->extractExcerpt, 'image' => $article->cover_image]) ?>
       <?php endforeach; ?>
     </div>
   </div>
 </div>
+<?php if( !empty($result[1]) ) : ?>
 <div class="row">
   <div class="col-md-10 mx-auto mt-3 mb-3">
     <div class="row blog2">
       <div class="col-md-11 mx-auto">
         <div class="row">
-          <?php foreach ($articles as $article) : ?>
+          <?php foreach ($result[1] as $article) : ?>
             <?= $this->element('post-card-2', ['slug' => $article->slug, 'title' => $article->extractExcerpt, 'image' => $article->cover_image, 'readTime' => $article->readTime]) ?>
           <?php endforeach; ?>
 
         </div>
       </div>
     </div>
+    <?php  if(!empty($result[2]) ): ?>
     <div class="row ">
       <div class="col-md-11 mx-auto">
         <div class="row">
@@ -47,7 +89,7 @@ if (count($articles) > 5) {
                 <h1 class="title text-white blogTitle">Subscribe<br />
                   To Our Blog</h1>
                 <h4 class="subtitle blogSubtitle text-white mt-3">
-                  Stay up to date on all investment news.
+                Get insightful articles on money and investment in your mailbox.
 
                 </h4>
                 <br />
@@ -67,7 +109,7 @@ if (count($articles) > 5) {
                 <h1 class="title text-white ">Subscribe<br />
                   To Our Blog</h1>
                 <h4 class="subtitle text-white">
-                  Stay up to date on all investment news.
+                  Get insightful articles on money and investment in your mailbox.
 
                 </h4>
                 <br />
@@ -85,19 +127,37 @@ if (count($articles) > 5) {
             </div>
 
           </div>
-          <?= $this->element('big-post-card', ['title' => $article->extractExcerpt, 'slug' => $article->slug, 'image' => $article->cover_image, 'readTime' => $article->readTime]) ?>
+          
+          <?php 
+          //check that arr for section 3 isnt empty
+            if(!empty($result[2][0]) ):
+              echo $this->element('big-post-card', ['title' => $result[2][0]->extractExcerpt, 'slug' => $result[2][0]->slug, 'image' => $result[2][0]->cover_image, 'readTime' => $result[2][0]->readTime]); 
+            endif; 
+          ?>
         </div>
       </div>
 
     </div>
+  
     <div class="row mb-3">
       <div class="col-md-11 mx-auto">
         <div class="row">
-          <?= $this->element('big-post-card', ['title' => $article->extractExcerpt, 'slug' => $article->slug, 'image' => $article->cover_image, 'readTime' => $article->readTime]) ?>
-          <?= $this->element('blog-post-single', ['title' => $article->extractExcerpt, 'slug' => $article->slug, 'image' => $article->cover_image, 'readTime' => $article->readTime]) ?>
+        <?php 
+        
+        //check that array before last isnt null
+            if( !empty($result[2][1])):
+             echo  $this->element('big-post-card', ['title' => $result[2][1]->extractExcerpt, 'slug' => $result[2][1]->slug, 'image' => $result[2][1]->cover_image, 'readTime' => $result[2][1]->readTime]);
+            endif;
+            //check the last array isnt null
+            if( !empty($result[2][2]) ):
+              echo $this->element('blog-post-single', ['title' => $result[2][2]->extractExcerpt, 'slug' => $result[2][2]->slug, 'image' => $result[2][2]->cover_image, 'readTime' => $result[2][2]->readTime]) ;
+            endif;
+        ?>
 
         </div>
       </div>
     </div>
+          <?php endif; ?>
   </div>
 </div>
+<?php endif; ?>
