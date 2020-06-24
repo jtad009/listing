@@ -1,10 +1,10 @@
 <?php
-use Migrations\AbstractSeed;
+use Phinx\Seed\AbstractSeed;
 
 /**
- * Categories seed.
+ * Tags seed.
  */
-class CategoriesSeed extends AbstractSeed
+class TagsSeed extends AbstractSeed
 {
     /**
      * Run Method.
@@ -20,34 +20,31 @@ class CategoriesSeed extends AbstractSeed
     {
         $data = [
             [
-                'id' => '1',
-                'category' => 'educations',
-                'article_count' => '8',
-                'created' => '2020-04-06 18:49:24',
-                'modified' => '2020-04-06 18:49:24',
-            ],
-            [
                 'id' => '2',
-                'category' => 'ICT',
-                'article_count' => '0',
+                'tag' => 'schoolse',
                 'created' => '2020-04-06 18:49:24',
                 'modified' => '2020-04-06 18:49:24',
             ],
             [
                 'id' => '3',
-                'category' => 'Raising children',
-                'article_count' => '0',
+                'tag' => 'make money in nigeria',
+                'created' => '2020-04-06 18:49:24',
+                'modified' => '2020-04-06 18:49:24',
+            ],
+            [
+                'id' => '4',
+                'tag' => 'skole affilate',
                 'created' => '2020-04-06 18:49:24',
                 'modified' => '2020-04-06 18:49:24',
             ],
         ];
 
-        
-        $rows = $this->fetchAll('SELECT * FROM categories'); // returns PDOStatement
+        $rows = $this->fetchAll('SELECT * FROM tags'); // returns PDOStatement
        
         if(count($rows) == 0){
-            $table = $this->table('categories');
+            $table = $this->table('tags');
             $table->insert($data)->save();
         }
+        
     }
 }

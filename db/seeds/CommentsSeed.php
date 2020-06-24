@@ -1,5 +1,5 @@
 <?php
-use Migrations\AbstractSeed;
+use Phinx\Seed\AbstractSeed;
 
 /**
  * Comments seed.

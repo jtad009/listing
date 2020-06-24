@@ -93,15 +93,15 @@ define('CAKE', CORE_PATH . 'src' . DS);
 define('SHOUT_IMAGE_UPLOAD_PATH',WWW_ROOT . 'img');
 define('EXCEL_UPLOAD_PATH',WWW_ROOT . 'excel');
 define('PDF_UPLOAD_PATH',WWW_ROOT . 'pdf/');
-define('APP_NAME', 'DIVAPAD');
+define('APP_NAME', 'Doubble');
 define('APP_EMAIL', 'test@wbcstaging.com');
 define('NO_REPLY', 'no-reply@wbcstaging.com');
-define('BASE_DOMAIN', env('BASE_DOMAIN', null));
-// define('BASE_DOMAIN', 'http://localhost:8001/');
+define('BASE_DOMAIN', 'http://localhost:8020/');
 define('TWITTER_HANDLE', '');
 define('INSTAGRAM_CLIENT_ID','');
 define('AUDIENCE_ID', 'ca4bf2eabb');
 define('MAILCHIMP_API_KEY', 'dcf34959daf5fc3477120ca03d83589d-us10');
 define('DISCUS_URL', 'https://doubbletest.disqus.com/embed.js');
-
+define('LOGO_PATH', 'logo.svg');
+define('BG', 'bg-white');
 // "@php -r \"file_exists('config/app.php') || copy('config/app.default.php', 'config/app.php');\"",

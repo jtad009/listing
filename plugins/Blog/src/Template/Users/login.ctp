@@ -1,10 +1,10 @@
 
-<body class="bg-dark bg-pic" >
+<body class="<?= BG ?> bg-pic" >
   <div class="container">
   <div class="row text-center  mx-auto">
                 <div class="col-md-8 col-xs-12 mx-auto">
                 <br>
-                  <?= $this->Html->image('logo.png',['alt'=>ucfirst(APP_NAME),'width'=>'140','height'=>140]);?>
+                  <?= $this->Html->image(LOGO_PATH,['alt'=>ucfirst(APP_NAME),'width'=>'140','height'=>140]);?>
                 
                 <br>
             </div>

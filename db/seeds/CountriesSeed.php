@@ -1,10 +1,10 @@
 <?php
-use Migrations\AbstractSeed;
+use Phinx\Seed\AbstractSeed;
 
 /**
- * Oauths seed.
+ * Countries seed.
  */
-class OauthsSeed extends AbstractSeed
+class CountriesSeed extends AbstractSeed
 {
     /**
      * Run Method.
@@ -19,14 +19,19 @@ class OauthsSeed extends AbstractSeed
     public function run()
     {
         $data = [
+            [
+                'id' => '1',
+                'name' => 'Nigeria',
+                'short' => 'NG',
+                'created' => '2020-04-06 18:49:24',
+            ],
         ];
 
-        $rows = $this->fetchAll('SELECT * FROM oauths'); // returns PDOStatement
+        $rows = $this->fetchAll('SELECT * FROM countries'); // returns PDOStatement
        
         if(count($rows) == 0){
-            $table = $this->table('oauths');
+            $table = $this->table('countries');
             $table->insert($data)->save();
         }
-        
     }
 }

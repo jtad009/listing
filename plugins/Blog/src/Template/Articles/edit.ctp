@@ -23,7 +23,7 @@
 
 
 
-        <div class="articles card bg-dark">
+        <div class="articles card <?= BG ?>">
           <?= $this->Form->create($article, ['type' => 'file']) ?>
           <fieldset class="card-body">
             <h4 class="card-title text-center text-white"><?= __('Add Article') ?>

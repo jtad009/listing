@@ -1,4 +1,4 @@
-<body class="bg-dark">
+<body class="<?= BG ?>">
     <div class="container">
        <div class="row text-center  mx-auto">
                 <div class="col-md-8 col-xs-12 mx-auto">

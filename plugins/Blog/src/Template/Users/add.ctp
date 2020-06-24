@@ -4,7 +4,7 @@
  * @var \App\View\AppView $this
  */
 ?>
-<body class="bg-dark bg-pic">
+<body class="<?= BG ?> bg-pic">
 <div class="container-fluid mb-5">
 
     <div class="row">

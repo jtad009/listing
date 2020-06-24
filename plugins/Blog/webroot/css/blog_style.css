@@ -189,4 +189,24 @@ header.masthead .overlay {
 }
   .card-login {
     max-width: 25rem; }
-    
+    .pagination li {
+      font-size: 14px !important;
+      padding: 8px !important;
+  }
+  
+  .pagination li a {
+      color: var(--color-2) !important;
+  }
+  
+  .pagination li.next {
+      border: 1px solid #ccc !important;
+      margin-left: 8px;
+      padding: 8px !important;
+      width: 5%;
+      text-align: center;
+      font-size: 12px !important;
+  }
+  
+  .pagination li.next>a {
+      padding: 8px !important;
+  }

@@ -23,7 +23,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <?= $this->Html->link('Blog', ['controller' => 'articles', 'action' => 'index', 'plugin' => 'Blog'], ['class' => isset($page) && $page === 'articles' ? 'nav-link active' :  'nav-link']) ?>
+                <?= $this->Html->link('Blog', ['controller' => 'articles', 'action' => 'index', 'plugin' => 'Blog'], ['class' => isset($page) && $page === 'Blog' ? 'nav-link active' :  'nav-link']) ?>
 
             </li>
             <li class="nav-item">
@@ -34,7 +34,12 @@
                 <?= $this->Html->link('FAQ', ['controller' => 'pages', 'action' => 'faqs', 'plugin' => false], ['class' => isset($page) && $page === 'faqs' ? 'nav-link active' :  'nav-link']) ?>
 
             </li>
-
+            <?php if (isset($_SESSION['Auth']['User'])) : dd($_SESSION);  ?>
+                    <li class="nav-item ">
+                        <?= $this->Html->link('ADMIN', ['controller' => 'users', 'action' => 'view', $_SESSION['Auth']['User']['id'], 'plugin' => 'blog'], ['class' => 'nav-link']) ?>
+                        <!-- <a class="nav-link" href="distributor.html">DISTRIBUTOR</a> -->
+                    </li>
+            <?php endif; ?>
 
         </ul>
     </div>

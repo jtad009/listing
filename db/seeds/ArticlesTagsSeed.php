@@ -1,10 +1,10 @@
 <?php
-use Migrations\AbstractSeed;
+use Phinx\Seed\AbstractSeed;
 
 /**
- * Tags seed.
+ * ArticlesTags seed.
  */
-class TagsSeed extends AbstractSeed
+class ArticlesTagsSeed extends AbstractSeed
 {
     /**
      * Run Method.
@@ -20,31 +20,31 @@ class TagsSeed extends AbstractSeed
     {
         $data = [
             [
-                'id' => '2',
-                'tag' => 'schoolse',
+                'id' => '6',
+                'article_id' => '059c2775-40ea-4686-b7f5-61b43dea2738',
+                'tag_id' => '3',
                 'created' => '2020-04-06 18:49:24',
-                'modified' => '2020-04-06 18:49:24',
             ],
             [
-                'id' => '3',
-                'tag' => 'make money in nigeria',
+                'id' => '7',
+                'article_id' => '059c2775-40ea-4686-b7f5-61b43dea2738',
+                'tag_id' => '4',
                 'created' => '2020-04-06 18:49:24',
-                'modified' => '2020-04-06 18:49:24',
             ],
             [
-                'id' => '4',
-                'tag' => 'skole affilate',
+                'id' => '8',
+                'article_id' => '059c2775-40ea-4686-b7f5-61b43dea2738',
+                'tag_id' => '5',
                 'created' => '2020-04-06 18:49:24',
-                'modified' => '2020-04-06 18:49:24',
             ],
         ];
 
-        $rows = $this->fetchAll('SELECT * FROM tags'); // returns PDOStatement
+        
+        $rows = $this->fetchAll('SELECT * FROM articles_tags'); // returns PDOStatement
        
         if(count($rows) == 0){
-            $table = $this->table('tags');
+            $table = $this->table('articles_tags');
             $table->insert($data)->save();
         }
-        
     }
 }

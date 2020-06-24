@@ -45,22 +45,6 @@ class PagesController extends AppController
      */
     public function home()
     {
-        //Check if user has a saved token
-        // $savedToken = $this->Instagram->fetchSavedToken();
-        // if (!$savedToken) {
-        //     //if not then get tokens from IG
-        //     $this->redirect($this->Instagram->authorizationUrl);
-        // } else {
-        //     //else use the token to fetch data
-
-        //     if ($this->Instagram->hasUserAccessToken) {
-        //         //this refreshes the usertoken if it needs to
-        //         $this->Instagram->getLongLivedUserRefreshToken();
-        //         $this->set('igMedia', []);
-        //     }
-        // }
-
-        
         $this->set('page', 'home');
     }
     public function loadIgPost()

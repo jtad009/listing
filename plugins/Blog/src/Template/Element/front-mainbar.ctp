@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white fixed-top">
       <div class="container">
-        <?= $this->Html->link($this->Html->image('logo.png',['alt'=>APP_NAME,' height'=>'40']),['controller'=>'Pages','action'=>'home','plugin'=>false],['escape'=>false,'class'=>'navbar-brand'])?>
+        <?= $this->Html->link($this->Html->image(LOGO_PATH,['alt'=>APP_NAME,' height'=>'40']),['controller'=>'Pages','action'=>'home','plugin'=>false],['escape'=>false,'class'=>'navbar-brand'])?>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,7 +18,7 @@
            
             <li class="nav-item"> <?= $this->Html->link('Tags',['controller'=>'Tags','action'=>'index'],['class'=>'nav-link'])?></li>
              <?php endif;?>
-             <li class="nav-item"> <?= $this->Html->link('Distributors',['controller'=>'distributors','action'=>'index'],['class'=>'nav-link'])?></li>
+             <!-- <li class="nav-item"> <?php $this->Html->link('Distributors',['controller'=>'distributors','action'=>'index'],['class'=>'nav-link'])?></li> -->
             <li class="nav-item"> <?= $this->Html->link('MailList',['controller'=>'subscriptions','action'=>'index'],['class'=>'nav-link'])?></li>
             <li class="nav-item"> <?= $this->Html->link('Logout',['controller'=>'users','action'=>'logout'],['class'=>'nav-link'])?></li>
             <?php else:?>

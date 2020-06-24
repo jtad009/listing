@@ -1,5 +1,6 @@
 <?php
 $cakeDescription = isset($page) ? strtoupper($page) : APP_NAME;
+
 ?>
 <!DOCTYPE html>
 <html>

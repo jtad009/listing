@@ -11,7 +11,7 @@
                    <br/>
                    <br/>
                     <?= $this->Flash->render() ?>
-<div class="tags card bg-dark">
+<div class="tags card <?= BG ?>">
     <?= $this->Form->create($tag) ?>
     <fieldset class="card-body">
         <h4 class="card-title text-center text-white"><?= __('Edit Tag') ?><hr/></h4>

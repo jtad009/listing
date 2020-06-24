@@ -1,6 +1,6 @@
 <?php
 
-use Migrations\AbstractSeed;
+use Phinx\Seed\AbstractSeed;
 
 /**
  * Articles seed.

@@ -17,7 +17,7 @@
                 <?= $this->Flash->render() ?>
       
 
-<div class="users card bg-dark">
+<div class="users card <?= BG ?>">
     <?= $this->Form->create($user, ['type'=>'file']) ?>
     <fieldset class="card-body">
         <h4 class="card-title text-center text-white"><?= __('Edit User') ?><hr/></h4>

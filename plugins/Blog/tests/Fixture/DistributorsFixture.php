@@ -13,7 +13,7 @@ class DistributorsFixture extends TestFixture
      *
      * @var array
      */
-    public $connection = 'blog';
+    public $connection = 'test_blog';
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'uuid', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
