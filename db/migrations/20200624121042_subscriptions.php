@@ -31,8 +31,7 @@ class Subscriptions extends AbstractMigration
      */
     public function up()
     {
-        $exists = $this->hasTable('subscriptions');
-        if (!$exists) {
+       
         $this->table('subscriptions', ['id' => false, 'primary_key' => ['id']])
             ->addColumn('id', 'uuid', [
                 'default' => 'UUID()',
@@ -56,7 +55,7 @@ class Subscriptions extends AbstractMigration
             ])
             ->create();
 
-            }
+         
     }
     /**
      * Drop Database
@@ -65,6 +64,6 @@ class Subscriptions extends AbstractMigration
     public function down()
     {
        
-        $this->execute('DELETE FROM subscriptions');
+        $this->execute('DROP TABLE subscriptions');
     }
 }

@@ -29,10 +29,11 @@ class Articles extends AbstractMigration
      * Remember to call "create()" or "update()" and NOT "save()" when working
      * with the Table class.
      */
-    public function change()
+    public function up()
     {
         $exists = $this->hasTable('articles');
-        if (!$exists) {
+        
+        // if (!$exists) {
 
 
             $table = $this->table('articles', ['id' => false, 'primary_key' => ['id']]);
@@ -97,7 +98,7 @@ class Articles extends AbstractMigration
                 'null' => false,
             ]);
             $table->create();
-        }
+        // }
     }
     /**
      * Drop Database
@@ -105,6 +106,6 @@ class Articles extends AbstractMigration
      */
     public function down()
     {
-        $this->execute('DELETE FROM articles');
+        $this->execute('DROP TABLE articles');
     }
 }

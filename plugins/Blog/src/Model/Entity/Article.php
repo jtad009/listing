@@ -43,6 +43,9 @@ class Article extends Entity
         '*' => true,
         'id' => false
     ];
+    public function _getCover_Image(){
+        return '/img/blog/big-blog.svg';
+    }
     /**
      *Calculate the time it will take to read this article
      */

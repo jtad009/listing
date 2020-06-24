@@ -17,6 +17,7 @@ class ArticlesSeed extends AbstractSeed
      *
      * @return void
      */
+    public $connection = 'test_blog';
     public function run()
     {
         $data = [

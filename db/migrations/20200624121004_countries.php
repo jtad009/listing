@@ -59,6 +59,6 @@ class Countries extends AbstractMigration
      */
     public function down()
     {
-        $this->execute('DELETE FROM countries');
+        $this->execute('DROP TABLE countries');
     }
 }

@@ -55,6 +55,6 @@ class States extends AbstractMigration
     public function down()
     {
         
-        $this->execute('DELETE FROM states');
+        $this->execute('DROP TABLE states');
     }
 }

@@ -85,7 +85,7 @@ if (count($articles) > 5) {
             </div>
 
           </div>
-          <?= $this->element('big-post-card', ['title' => $article->extractExcerpt, 'slug' => $article->slug, 'image' => 'blog/big-blog.svg', 'readTime' => $article->readTime]) ?>
+          <?= $this->element('big-post-card', ['title' => $article->extractExcerpt, 'slug' => $article->slug, 'image' => $article->cover_image, 'readTime' => $article->readTime]) ?>
         </div>
       </div>
 
@@ -93,8 +93,8 @@ if (count($articles) > 5) {
     <div class="row mb-3">
       <div class="col-md-11 mx-auto">
         <div class="row">
-          <?= $this->element('big-post-card', ['title' => $article->extractExcerpt, 'slug' => $article->slug, 'image' => 'blog/big-blog.svg', 'readTime' => $article->readTime]) ?>
-          <?= $this->element('blog-post-single', ['title' => $article->extractExcerpt, 'slug' => $article->slug, 'image' => 'blog/big-blog.svg', 'readTime' => $article->readTime]) ?>
+          <?= $this->element('big-post-card', ['title' => $article->extractExcerpt, 'slug' => $article->slug, 'image' => $article->cover_image, 'readTime' => $article->readTime]) ?>
+          <?= $this->element('blog-post-single', ['title' => $article->extractExcerpt, 'slug' => $article->slug, 'image' => $article->cover_image, 'readTime' => $article->readTime]) ?>
 
         </div>
       </div>

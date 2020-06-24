@@ -25,6 +25,7 @@ class ArticlesControllerTest extends TestCase
         'plugin.Blog.Articles',
     ];
     public $faker;
+    
     public $record =  [
         
             'id' => 'f1d8dba0-3f75-4258-a80e-2e07db05842c',
@@ -38,7 +39,13 @@ class ArticlesControllerTest extends TestCase
             'user_id' => 1,
             'created' => 1592998859,
             'modified' => 1592998859,
-            'cover_image' => 'Lorem ipsum dolor sit amet',
+            'cover_image' => [
+                    'name'     => 'image.png',
+                    'tmp_name' => __DIR__,
+                    'error'    => 1,
+                    'size'     => 258
+                ]
+        
         
     ];
     public function setUp()
@@ -61,7 +68,7 @@ class ArticlesControllerTest extends TestCase
      */
     public function testIsAuthorized()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $this->assertEquals(true, true);
     }
 
     /**
@@ -130,20 +137,7 @@ class ArticlesControllerTest extends TestCase
         $this->viewVariable('pages');
     }
 
-    /**
-     * Test view method
-     *
-     * @return void
-     */
-    public function testView()
-    {
-        $this->get('blog/articles/Lorem-ipsum-dolor-sit-amet');
-       
-        $this->assertResponseOk();
-        $this->viewVariable('acticle');
-        $this->viewVariable('response');
-       
-    }
+    
 
     /**
      * Test add method
@@ -152,19 +146,33 @@ class ArticlesControllerTest extends TestCase
      */
     public function testAdd()
     {
+        
         $this->enableCsrfToken();
         $this->faker = Faker\Factory::create();
         $this->record['id'] = $this->faker->uuid;
-        $this->record['slug'] = $this->faker->companyEmail;
+    //    $this->record['cover_image'] = $this->faker->file("logo.png");
         
-        $this->post('articles/add', $this->record);
+        $this->post('blog/articles/add', $this->record);
       
         $this->assertResponseSuccess();
-        $articles = TableRegistry::getTableLocator()->get('Articles');
+        $articles = TableRegistry::getTableLocator()->get('Blog.Articles');
         $query = $articles->find()->where(['id' => $this->record['id']]);
         $this->assertEquals(1, $query->count());
     }
 
+    /**
+     * Test view method
+     *
+     * @return void
+     */
+    public function testView()
+    {
+        $this->get('blog/articles/Lorem-ipsum-dolor-sit-amet');
+        $this->assertResponseOk();
+        $this->viewVariable('acticle');
+        $this->viewVariable('response');
+       
+    }
     /**
      * Test edit method
      *
@@ -172,7 +180,20 @@ class ArticlesControllerTest extends TestCase
      */
     public function testEdit()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $this->enableCsrfToken();
+        $this->faker = Faker\Factory::create();
+        
+        $this->record['title'] = 'Edited title';
+        
+        $this->post('blog/articles/edit'.$this->record['id'], $this->record);
+      
+        $this->assertResponseSuccess();
+        $articles = TableRegistry::getTableLocator()->get('Blog.Articles');
+        $query = $articles->find()->where(['id' => $this->record['id']]);
+        $this->assertEquals(1, $query->count());
+        var_dump($query->toArray());
+        $this->assertEquals($query->toArray()[0]['title'],$this->record['title']);
+       
     }
 
     /**

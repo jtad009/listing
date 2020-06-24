@@ -63,9 +63,8 @@
             "@php -r \"file_exists('config/.env') && copy('config/.env.test', 'config/.env');\""
         ],
         "test": [
-            "@db-migrate-undo -e testing",
+            "@db-migrate-undo -e testing -t 0",
             "@db-migrate -e testing",
-            "@db-seed -e testing",
             "phpunit --colors=always"
         ]
     },

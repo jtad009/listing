@@ -92,6 +92,6 @@ class Comments extends AbstractMigration
      */
     public function down()
     {
-        $this->execute("DELETE FROM comments");
+        $this->execute("DROP TABLE comments");
     }
 }

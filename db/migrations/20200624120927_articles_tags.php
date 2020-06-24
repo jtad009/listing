@@ -58,6 +58,6 @@ class ArticlesTags extends AbstractMigration
      */
     public function down()
     {
-        $this->execute('DELETE FROM articles_tags');
+        $this->execute('DROP TABLE articles_tags');
     }
 }

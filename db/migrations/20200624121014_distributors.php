@@ -32,6 +32,7 @@ class Distributors extends AbstractMigration
     public function up()
     {
         $exists = $this->hasTable('distributors');
+       
         if (!$exists) {
         $this->table('distributors', ['id' => false, 'primary_key' => ['id']])
             ->addColumn('id', 'uuid', [
@@ -99,6 +100,6 @@ class Distributors extends AbstractMigration
      */
     public function down()
     {
-        $this->execute('DELETE FROM distributors');
+        $this->execute('DROP TABLE distributors');
     }
 }

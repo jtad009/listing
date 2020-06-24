@@ -64,7 +64,7 @@ class Categories extends AbstractMigration
      */
     public function down()
     {
-        $this->execute('DELETE FROM categories');
+        $this->execute('DROP TABLE categories');
        
     }
 }

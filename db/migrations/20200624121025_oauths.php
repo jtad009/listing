@@ -79,6 +79,6 @@ class Oauths extends AbstractMigration
      */
     public function down()
     {
-        $this->execute('DELETE FROM oauths');
+        $this->execute('DROP TABLE oauths');
     }
 }

@@ -173,9 +173,9 @@ class ArticlesController extends AppController
     {
 
         $article = $this->Articles->newEntity();
-        // debug(WWW_ROOT);
+        
         if ($this->request->is('post')) {
-
+           
             $uploadError = array(1, 2, 3, 4, 5, 6, 7, 8); //errorcode gotten from php.net
             $upload = !in_array($this->request->data['cover_image']['error'], $uploadError) ? $this->Upload->send($this->request->data['cover_image'], 'blogs') : $article->cover_image;
             $article = $this->Articles->patchEntity($article, $this->request->getData());

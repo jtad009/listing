@@ -97,6 +97,6 @@ class Users extends AbstractMigration
      * @return void
      */
     public function down(){
-        $this->execute('DELETE FROM users');
+        $this->execute('DROP TABLE users');
     }
 }

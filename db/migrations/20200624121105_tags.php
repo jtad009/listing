@@ -57,6 +57,6 @@ class Tags extends AbstractMigration
      * @return void
      */
     public function down(){
-        $this->execute('DELETE FROM tags');
+        $this->execute('DROP TABLE tags');
     }
 }

@@ -64,6 +64,6 @@ class Media extends AbstractMigration
      */
     public function down()
     {
-        $this->execute('DELETE FROM media');
+        $this->execute('DROP TABLE media');
     }
 }
