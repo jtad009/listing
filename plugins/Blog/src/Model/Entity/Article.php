@@ -85,7 +85,7 @@ class Article extends Entity
         }
         return  \Cake\Utility\Text::truncate(
             trim(html_entity_decode(strip_tags($excerpt_p))),
-            100,
+            80,
             [
                 'ellipsis' => '...',
                 'exact' => false

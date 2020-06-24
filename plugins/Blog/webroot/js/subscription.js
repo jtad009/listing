@@ -1,4 +1,4 @@
-var baseLink = `${window.location.protocol}//${window.location.host}`;
+var baseLink = `${window.location.protocol}//${window.location.host}/`;
 $(document).ready(function(){
    $('.spinner-grow ').addClass('d-none');
     $(document).on('click', 'a.subscribe', function(e){
@@ -13,6 +13,8 @@ $(document).ready(function(){
             type: 'post',
             data: { email: $this.parent().find('input[name="subscribe"]').val() },
             beforeSend: function(xhr){
+                console.log($this.parent().find('div.spinner-grow'));
+                console.log(baseLink);
                 $this.parent().find('div.spinner-grow').removeClass('d-none');
                 $this.addClass('d-none');
             },

@@ -14,22 +14,10 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-// function getAddress()
-// {
-//     $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? 'https' : 'http';
-//     return $protocol . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-// }
 
-// function getTitle()
-// {
-//     if (strripos(getAddress(), 'articles/')) {
-//         return str_ireplace('-', ' ', substr(getAddress(), strripos(getAddress(), 'articles/') + strlen('articles/')));
-//     } else {
-//         return "Diva Blog";
-//     }
-// }
 
-$cakeDescription = 'Diva Blog';
+$cakeDescription = isset($page) ? strtoupper($page) : APP_NAME;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,8 +59,7 @@ $cakeDescription = 'Diva Blog';
 <body class="fixed-nav sticky-footer bg-light" id="page-top" style="background: #ededed !important">
 
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGVRZKX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
 <!-- End Google Tag Manager (noscript) -->
 
     <?= $this->element('front-mainbar') ?>

@@ -53,8 +53,10 @@ if (count($articles) > 5) {
                 <br />
                 <input class="form-control mt-3 mb-3" placeholder="Enter your email" style="font-size: 100%; color:var(--primary-color)" id="subscribe" name="subscribe" />
                 <a class="btn btn-primary-outline-invert mx-auto d-block mt-4 w-50 subscribe">Subscribe</a>
-                <div class="ml-3 spinner-grow colorBlue d-none ml-5" role="status">
-                  <span class="sr-only">Loading...</span>
+                <div class=" mx-auto text-center">
+                  <div class="ml-3 spinner-grow bg-white mt-3 text-center" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
                 </div>
 
 
@@ -71,8 +73,10 @@ if (count($articles) > 5) {
                 <br />
                 <input class="form-control mt-3 mb-3" placeholder="Enter your email" style="font-size: 100%; color:var(--primary-color)" id="subscribe" name="subscribe" />
                 <a class="btn btn-primary-outline-invert mx-auto d-block mt-4 w-50 subscribe">Subscribe</a>
-                <div class="ml-3 spinner-grow colorBlue d-none ml-5" role="status">
-                  <span class="sr-only">Loading...</span>
+                <div class=" mx-auto text-center">
+                  <div class="ml-3 spinner-grow bg-white mt-3 text-center" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
                 </div>
 
 
@@ -90,7 +94,7 @@ if (count($articles) > 5) {
       <div class="col-md-11 mx-auto">
         <div class="row">
           <?= $this->element('big-post-card', ['title' => $article->extractExcerpt, 'slug' => $article->slug, 'image' => 'blog/big-blog.svg', 'readTime' => $article->readTime]) ?>
-          <?= $this->element('big-post-single', ['title' => $article->extractExcerpt, 'slug' => $article->slug, 'image' => 'blog/big-blog.svg', 'readTime' => $article->readTime]) ?>
+          <?= $this->element('blog-post-single', ['title' => $article->extractExcerpt, 'slug' => $article->slug, 'image' => 'blog/big-blog.svg', 'readTime' => $article->readTime]) ?>
 
         </div>
       </div>
