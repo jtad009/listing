@@ -1,13 +1,7 @@
 // When the user scrolls the page, execute myFunction
 window.onscroll = function () { myFunction() };
-function windowOnClick(event) {
-    if (event.target === modal) {
-        toggleModal();
-    }
-}
 
-window.addEventListener("click", windowOnClick)
-// Get the header
+// Get the header/or nav
 var header = document.getElementById("header");
 
 // Get the offset position of the navbar
