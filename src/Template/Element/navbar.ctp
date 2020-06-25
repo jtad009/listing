@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light header">
+
+<nav class="navbar navbar-expand-lg navbar-light header" id="header">
     <a class="navbar-brand " href="/">
         <?= $this->Html->image('logo.svg', ['class' => 'logo']) ?>
         <p class="logo-sub">by Sterling Bank</p>

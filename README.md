@@ -38,22 +38,24 @@ Doubble is built using  opensource CakePHP 3.8 technology
 
 **Now, configure your database:**
 
-Find file **.env** or create one in your config directory and set the environment variables listed below:
+Find file **config/.env** or create one in your config directory and set the environment variables listed below:
 
 * **BASE_DOMAIN**
 * **DB_HOST**
 * **DATABASE_NAME**
 * **DB_USER**
 * **DB_PASSWORD**
+* **DEFAULT_EMAIL_ADDRESS**
+* **DEFAULT_EMAIL_PASSWORD**
 
 Mailer environment variables are also required to be set up. This is because **Doubble** needs to send emails to  admins depending on what events require notification.
 
 ~~~
-2. bin/cake migrations migrate
+2. composer db-migrate
 ~~~
 
 ~~~
-3. bin/cake migrations seed
+3. composer db-seed
 ~~~
 
 ~~~
@@ -69,6 +71,13 @@ bin/cake plugin assets copy
 5. composer dump-autoload -o
 ~~~
 
+**To execute Doubble Test**:
+Run the following command
+~~~
+1. composer check 
+
+This command runs test and linting 
+~~~
 
 **To execute Doubble**:
 

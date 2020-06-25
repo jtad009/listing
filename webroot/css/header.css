@@ -550,4 +550,15 @@ select {
     text-align: justify;
     line-height: 35px;
 }
+/* Make header sticky */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999999;
+    box-shadow: 1px 1px 5px #aaaaaa
+}
 
+.sticky+.content {
+    padding-top: 102px;
+}
