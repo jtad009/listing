@@ -1,6 +1,6 @@
 <div class="col-md-12 col-lg-8 mb-2" data-aos="zoom-in">
     <div class="card border-0 secondary-color blogCard">
-        <?= $this->Html->image($image, ['alt' => $slug, 'class' => 'card-img-top']) ?>
+        <?= $this->Html->image('passport/blogs/'.$image, ['alt' => $slug, 'class' => 'card-img-top']) ?>
         <div class="card-body">
             <h4 class="card-title d-none"></h4>
             <p class="card-text"><?= $title ?></p>

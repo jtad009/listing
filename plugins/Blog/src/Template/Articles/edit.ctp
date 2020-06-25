@@ -32,7 +32,7 @@
             <?php
             echo $this->Form->input('category_id', ['templates' => ['inputContainer' => '<div class="form-group">{{content}}</div>'], 'class' => 'form-control']);
             echo $this->Form->input('title', ['templates' => ['inputContainer' => '<div class="form-group">{{content}}</div>'], 'class' => 'form-control']);
-            echo $this->Form->input('cover_image', ['templates' => ['inputContainer' => '<div class="form-group">{{content}}</div>'], 'type' => 'file', 'class' => 'form-control']);
+            echo $this->Form->input('cover_image', ['templates' => ['inputContainer' => '<div class="form-group">{{content}}</div>'], 'type' => 'file', 'class' => 'form-control','accept'=>".png,.bmp,.gif"]);
             // echo $this->Form->input('article', [
             //   'class' => 'editor form-control', 'templates' =>
             //   ['inputContainer' => '<div class="form-group form-group-sm bg-white">{{content}}</div>'], 'placeholder' => 'enter message',

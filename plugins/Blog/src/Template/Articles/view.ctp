@@ -10,20 +10,20 @@ $this->assign('title', $article->extractExcerpt);
     <div class="col-md-10 mx-auto mt-3">
         <div class="row">
             <div class="col-md-6 p-5">
-                <h2 class="title blogTitle"><?= $article->title ?></h2>
-                <span class="primary-color readTime"><?= $article->readTime?></span>
+                <h2 class="title blogTitle"><?= ucwords($article->title) ?></h2>
+                <span class="primary-color readTime"><?= $article->readTime ?></span>
                 <p class="mt-2">
-                    <?=  $this->Html->link($this->Html->image('social/twitter.svg'), [], ['class'=>'mt-1 mr-2', 'escape'=>false]) ?>
-                    <?=  $this->Html->link($this->Html->image('social/fb.svg'), [], ['class'=>'mt-1 mr-2','escape'=>false]) ?>
-                    <?=  $this->Html->link($this->Html->image('social/whatsapp.svg'), [], ['class'=>'mt-1 mr-2','escape'=>false]) ?>
-                    <?=  $this->Html->link($this->Html->image('social/msg.svg'), [], ['class'=>'mt-1 mr-2','escape'=>false]) ?>
-                    
+                    <?= $this->Html->link($this->Html->image('social/twitter.svg'), [], ['class' => 'mt-1 mr-2', 'escape' => false]) ?>
+                    <?= $this->Html->link($this->Html->image('social/fb.svg'), [], ['class' => 'mt-1 mr-2', 'escape' => false]) ?>
+                    <?= $this->Html->link($this->Html->image('social/whatsapp.svg'), [], ['class' => 'mt-1 mr-2', 'escape' => false]) ?>
+                    <?= $this->Html->link($this->Html->image('social/msg.svg'), [], ['class' => 'mt-1 mr-2', 'escape' => false]) ?>
+
 
                 </p>
             </div>
             <div class="col-md-6">
-                <?= $this->Html->image($article->cover_image, ['class'=>'img img-fluid w-100 h-100', 'style'=>'object-fit:fill']) ?>
-               
+                <?= $this->Html->image('passport/blogs/' . $article->cover_image, ['class' => 'img img-fluid w-100 h-100', 'style' => 'object-fit:fill']) ?>
+
             </div>
         </div>
         <div class="row">
@@ -57,34 +57,34 @@ $this->assign('title', $article->extractExcerpt);
         </div>
         <div class="col-md-10 mx-auto mt-3 mb-3">
             <div class="row blog2">
-                <?php 
-               
-                    foreach($similar  as $article):
-                        echo $this->element('post-card-2', ['slug'=>$article->slug, 'title'=>$article->extractExcerpt, 'image'=>$article->cover_image,'readTime'=>$article->readTime]);
-                    endforeach;
+                <?php
+
+                foreach ($similar  as $article) :
+                    echo $this->element('post-card-2', ['slug' => $article->slug, 'title' => $article->title, 'image' => $article->cover_image, 'readTime' => $article->readTime]);
+                endforeach;
                 ?>
-           
-                
+
+
             </div>
 
         </div>
     </div>
 </div>
 <script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        
-        var disqus_config = function () {
-        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+    var disqus_config = function() {
+        this.page.url = window.location.href; // Replace PAGE_URL with your page's canonical URL variable
         this.page.identifier = '<?= $article->id ?>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        
-        (function () { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = '<?= DISCUS_URL ?>';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+        s.src = '<?= DISCUS_URL ?>';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>

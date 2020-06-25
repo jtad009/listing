@@ -127,3 +127,6 @@ span.readTime {
         font-size: 34px;
     }
 }
+.card-img-top{
+    min-height: 230px;
+}

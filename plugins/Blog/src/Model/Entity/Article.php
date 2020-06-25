@@ -43,11 +43,16 @@ class Article extends Entity
         '*' => true,
         'id' => false
     ];
-    public function _getCover_Image(){
-        return '/img/blog/big-blog.svg';
+    /**
+     * Format Title
+     * @return string
+     */
+    protected function _getTitle($title){
+        return ucwords($title);
     }
     /**
      *Calculate the time it will take to read this article
+     *@return string
      */
     public function _getReadTime()
     {

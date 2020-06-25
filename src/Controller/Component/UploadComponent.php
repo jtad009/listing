@@ -60,12 +60,12 @@ class UploadComponent extends Component
                 case 'blogs':
                     $this->dir = SHOUT_IMAGE_UPLOAD_PATH . '/passport/blogs';
 
-                    $this->Manipulator->resample(1280, 600, false);
+                    $this->Manipulator->resample(788, 525, false);
                     //$this->Manipulator->crop();
                     $this->Manipulator->save($this->dir . DS . $filename);
                     $this->dir = SHOUT_IMAGE_UPLOAD_PATH . '/passport/blogs/400';
 
-                    $this->Manipulator->resample(612, 400, false);
+                    $this->Manipulator->resample(494, 318, false);
                     // $this->Manipulator->crop(0);
                     $this->Manipulator->save($this->dir . DS . $filename);
 

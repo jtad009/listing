@@ -68,7 +68,8 @@ class ManipulatorComponent extends Component
                 $this->image = imagecreatefromgif($file);
                 break;
             case IMAGETYPE_JPEG:
-                $this->image = imagecreatefromjpeg($file);
+                
+                $this->image = \imagecreatefromjpeg($file);
                 break;
             case IMAGETYPE_PNG:
                 $this->image = imagecreatefrompng($file);

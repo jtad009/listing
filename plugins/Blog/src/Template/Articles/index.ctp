@@ -60,7 +60,7 @@ $result = splitArray($articleData, 3);
         <h1 class="title mt-3 blogTitle text-center w-100 d-block d-lg-none"> <?= NO_ARTICLE ?></h1>
       <?php endif; ?>
       <?php foreach ($result[0] as $article) : ?>
-        <?= $this->element('post-card-1', ['slug' => $article->slug, 'title' => $article->extractExcerpt, 'image' => $article->cover_image]) ?>
+        <?= $this->element('post-card-1', ['slug' => $article->slug, 'title' => $article->title, 'image' => $article->cover_image]) ?>
       <?php endforeach; ?>
     </div>
   </div>
@@ -72,7 +72,7 @@ $result = splitArray($articleData, 3);
       <div class="col-md-11 mx-auto">
         <div class="row">
           <?php foreach ($result[1] as $article) : ?>
-            <?= $this->element('post-card-2', ['slug' => $article->slug, 'title' => $article->extractExcerpt, 'image' => $article->cover_image, 'readTime' => $article->readTime]) ?>
+            <?= $this->element('post-card-2', ['slug' => $article->slug, 'title' => $article->title, 'image' => $article->cover_image, 'readTime' => $article->readTime]) ?>
           <?php endforeach; ?>
 
         </div>
@@ -131,7 +131,7 @@ $result = splitArray($articleData, 3);
           <?php 
           //check that arr for section 3 isnt empty
             if(!empty($result[2][0]) ):
-              echo $this->element('big-post-card', ['title' => $result[2][0]->extractExcerpt, 'slug' => $result[2][0]->slug, 'image' => $result[2][0]->cover_image, 'readTime' => $result[2][0]->readTime]); 
+              echo $this->element('big-post-card', ['title' => $result[2][0]->title, 'slug' => $result[2][0]->slug, 'image' => $result[2][0]->cover_image, 'readTime' => $result[2][0]->readTime]); 
             endif; 
           ?>
         </div>
@@ -146,11 +146,11 @@ $result = splitArray($articleData, 3);
         
         //check that array before last isnt null
             if( !empty($result[2][1])):
-             echo  $this->element('big-post-card', ['title' => $result[2][1]->extractExcerpt, 'slug' => $result[2][1]->slug, 'image' => $result[2][1]->cover_image, 'readTime' => $result[2][1]->readTime]);
+             echo  $this->element('big-post-card', ['title' => $result[2][1]->title, 'slug' => $result[2][1]->slug, 'image' => $result[2][1]->cover_image, 'readTime' => $result[2][1]->readTime]);
             endif;
             //check the last array isnt null
             if( !empty($result[2][2]) ):
-              echo $this->element('blog-post-single', ['title' => $result[2][2]->extractExcerpt, 'slug' => $result[2][2]->slug, 'image' => $result[2][2]->cover_image, 'readTime' => $result[2][2]->readTime]) ;
+              echo $this->element('blog-post-single', ['title' => $result[2][2]->title, 'slug' => $result[2][2]->slug, 'image' => $result[2][2]->cover_image, 'readTime' => $result[2][2]->readTime]) ;
             endif;
         ?>
 
