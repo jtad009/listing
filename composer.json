@@ -54,20 +54,19 @@
         "db-migrate-undo": "phinx rollback",
         "db-migrate": "phinx migrate",
         "db-seed": "phinx seed:run ",
-        "set-staging-env": [
-            "echo Switching to Staging Env",
-            "@php -r \"file_exists('config/.env') || copy('config/.env.staging', 'config/.env');\"",
-            "@php -r \"file_exists('config/app.php') || copy('config/app.deploy.php', 'config/app.php');\""
-        ],
-        "set-env-dev": [
+        "env-dev": [
             "echo Switching to Dev Env",
-            "@php -r \"file_exists('config/.env') && copy('config/.env.dev', 'config/.env');\"",
-            "@php -r \"file_exists('config/app.php') || copy('config/app.default.php', 'config/app.php');\""
+            "@php -r \"file_exists('config/app.php') || copy('config/app.dev.php', 'config/app.php');\""
         ],
-        
+        "env-test": [
+            "echo Switching to TEST Env",
+            "@php -r \"file_exists('config/app.php') && copy('config/app.default.php', 'config/app.php');\"",
+            "@php -r \"file_exists('config/.env') && copy('config/.env.test', 'config/.env');\""
+        ],
         "test": [
             "@db-migrate-undo -e testing -t 0",
             "@db-migrate -e testing",
+            "@db-seed -e testing",
             "phpunit --colors=always"
         ]
     },
