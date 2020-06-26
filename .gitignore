@@ -8,6 +8,7 @@ phinx.yml
 /logs/*
 /tmp/*
 /vendor/*
+composer.json
 #/webroot/*
 # OS generated files #
 ######################
