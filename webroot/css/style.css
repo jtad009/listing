@@ -1,0 +1,323 @@
+/* end navbar */
+
+.one .title {
+    width: 503px;
+    height: 205px;
+    left: 125px;
+    top: 120px;
+    position: absolute;
+    font-size: var(--font-title) !important;
+}
+
+.one .title-sm {
+    width: 490px;
+    height: 205px;
+    left: 85px;
+    top: 100px;
+    position: absolute;
+    font-size: var(--font-title-2) !important;
+}
+
+.one .subtitle-sm {
+    position: absolute;
+    width: 442px;
+    height: 55px;
+    left: 85px;
+    top: 263px;
+    margin-bottom: 9px;
+}
+
+.title-sm {
+    font-size: var(--font-title-3);
+    color: var(--primary-color);
+    font-family: 'PT Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 68px;
+    /* or 107% */
+    letter-spacing: 0.7px;
+    /* text-transform: capitalize; */
+}
+
+.subtitle-sm {
+    font-family: 'PT Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 37px;
+    /* or 113% */
+    /* font-variant: small-caps; */
+    color: var(--primary-color);
+}
+
+.one .subtitle {
+    position: absolute;
+    width: 442px;
+    height: 55px;
+    left: 125px;
+    top: 343px;
+    font-size: var(--font-small-24);
+}
+
+/* SECTION ONE */
+
+.one {
+    background-image: url('../img/homepage/homepage-header.png');
+    min-height: 600px;
+    max-height: 800px;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.one .btn-primary {
+    position: absolute;
+    left: 125px;
+    top: 409px;
+}
+
+.one .sm-screen {
+    left: 85px !important;
+    top: 370px !important;
+}
+
+/* END SECTION dividers */
+
+@media only screen and (max-width: 992px) {
+    /* menu list for mobile devices */
+    .b-card {
+        width: 80% !important;
+        height: 100% !important;
+        min-height:445px !important;
+        background: #FFFFFF;
+        border-radius: 10px;
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+    }
+    .three .title {
+        line-height: 65px !important;
+        margin-top: 20px;
+    }
+    .four>h2 {
+        padding: 0 20px;
+    }
+    .b-card .body>b {
+        font-size: 40px !important;
+    }
+    .b-card .body>p {
+        margin-top: 9px;
+        margin-bottom: 9px;
+        font-size: var(--font-small-24) !important;
+    }
+    .five .subtitle {
+        font-size: 40px !important;
+    }
+    .accordion .card-body {
+        font-size: 40px !important;
+    }
+    .accordion .card-header a {
+        font-size: var(--font-small-3) !important;
+        font-weight: bold;
+    }
+    .accordionDiv {
+        padding: 0;
+        margin-top: 20px;
+    }
+    .subtitle {
+        font-style: normal;
+        font-weight: 200;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 40px !important;
+    }
+    .img-m {
+        padding-top: 100px
+    }
+}
+
+/****************************
+     BEGIN  section 2
+*****************************/
+
+.two {
+    background-color: var(--secondary-color);
+    min-height: 662px;
+}
+/* .two .card{
+    box-shadow: 1px 1px 5px #aaaaaa96
+} */
+.two .card-body {
+   color: var(--primary-color);
+   min-height: 257px;
+}
+.b-card {
+    width: 357px;
+    min-height: 445px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.b-card>img {
+    position: relative;
+    height:99px;
+    top: 79px;
+}
+
+.b-card .body {
+    margin-top: 89px;
+}
+
+.b-card .body>p, .b-card .body>b {
+    font-family: 'PT Sans', sans-serif;
+    font-style: normal;
+    font-size: var(--font-small-18);
+    /* or 151% */
+    /* font-variant: small-caps; */
+    color: var(--primary-color);
+}
+
+/************************************
+
+END SECTION TWO
+
+************************************/
+
+/**********************************
+SECTION 3
+
+***********************************/
+
+.three .side-1 {
+    padding: 10px 140px;
+}
+
+.three .title {
+    line-height: 48px;
+    letter-spacing: 0.7px;
+}
+
+/**********************************
+END SECTION 3
+
+***********************************/
+
+/**********************************
+SECTION 4
+
+***********************************/
+
+.four {
+    background-image: url('../img/homepage/testimonial.svg');
+    background-repeat: no-repeat;
+    min-height: 400px;
+    max-height: 600px;
+    background-size: cover;
+}
+
+.four .title {
+    margin-top: 100px !important;
+    line-height: 68px !important;
+}
+
+.four span {
+    font-family: 'PT Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+/**********************************
+    END SECTION 4
+
+***********************************/
+
+/**********************************
+SECTION 5
+
+***********************************/
+
+/**********************************
+        SECTION 6
+
+***********************************/
+
+
+
+.footer {
+    padding: 30px 0px;
+    background-color: var(--secondary-color);
+    min-height: 199px;
+}
+
+.footer .title {
+    font-size: var(--font-small-16);
+    line-height: 27px !important;
+}
+
+.footer a {
+    font-size: var(--font-small-13);
+    line-height: 27px !important;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-style: normal;
+    font-weight: normal;
+}
+
+.accordion {
+    min-width: -moz-available;
+    min-width: -webkit-fill-available
+}
+
+.accordion .card {
+    background: transparent !important;
+    border: none;
+}
+
+.accordion .card-header {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.accordion .card-header a {
+    font-style: normal;
+    font-size: var(--font-small-24);
+    color: var(--primary-color);
+}
+
+.accordion .card-body {
+    font-style: normal;
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+.accordion .card-header a:hover {
+    text-decoration: none;
+}
+
+.accordion .card-header a>#icon {
+    color: var(--theme-three);
+}
+
+.accordion .card-header a>#icon:hover {
+    font-weight: bold;
+    line-height: 24px;
+    font-size: var(--font-title-3) !important;
+}
+
+.collapsed.accordion-toggle:after, .accordion .btn:after {
+    /* symbol for "opening" panels */
+    font-family: 'FontAwesome';
+    content: "\f107";
+    float: right;
+    color: var(--theme-three);
+}
+
+.accordion-toggle:after, .accordion .btn:after {
+    /* symbol for "collapsed" panels */
+    font-family: 'FontAwesome';
+    content: "\f107";
+    content: "\f104";
+    float: right;
+    color: var(--theme-three);
+}
