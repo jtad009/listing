@@ -28,61 +28,13 @@
 
 </div>
 <div class="row two" style="padding-right: 90px; padding-left: 90px;">
-    <div class="row ml-auto my-auto mr-auto">
-        <div class="col-md-10 col-lg-3 mx-auto  b-card" data-aos="zoom-in">
-            <?= $this->Html->image('homepage/low-risk.png', ['alt' => 'low-risk', 'class' => 'mx-auto d-block mt-1']) ?>
-
-            <div class="body  details pl-2 pr-2 pb-3">
-                <b class="d-none d-lg-block pt-2 pb-2 text-center" style="font-size: 16px;color: var(--primary-color);"> Low Risk, High Returns</b>
-                <b class="d-block d-lg-none pt-2 pb-2 text-center" style="font-weight: 600; color: var(--primary-color);"> Low Risk, High Returns</b>
-
-                <p class="d-none d-lg-block text-justify" style="line-height: 33px; font-size: 14px;color: var(--primary-color);">
-
-                    You are not just saving, but investing in a guaranteed system that has very little risk but gives very high returns
-
-
-                </p>
-                <p class="d-block d-lg-none text-justify" style="line-height: 53px;">
-                    You are not just saving, but investing in a guaranteed system that has very little risk but gives very high returns
-                </p>
-
-            </div>
+    <div class="col-sm-10 mx-auto my-auto">
+        <div class="row ml-auto my-auto mr-auto">
+            <?= $this->Element('homepage-section-2-card', ['image' => 'homepage/low-risk-returns.png', 'title' => 'Low Risk, High Returns', 'description' => ' You are not just saving, but investing in a guaranteed system that has very little risk but gives very high returns.']) ?>
+            <?= $this->Element('homepage-section-2-card', ['image' => 'homepage/save-towards-a-goal.png', 'title' => 'Save towards a Goal', 'description' => "Whether you're saving towards paying your rent, funding your business, education or just saving for the future,
+                    there's an investment plan that suits you on Doubble."]) ?>
+            <?= $this->Element('homepage-section-2-card', ['image' => 'homepage/bank-grade-security.png', 'title' => 'Bank-Grade Security', 'description' => ' Doubble is backed by a commercial bank that has been in business for about 60 years and whose funds are protected and insured by the NDIC.']) ?>
         </div>
-
-        <div class="col-md-10 col-lg-3 mx-auto  b-card" data-aos="zoom-in">
-            <?= $this->Html->image('homepage/reach-multiple-target.png', ['alt' => 'sterling-reach-multiple-target', 'class' => 'mx-auto d-block mt-1']) ?>
-
-            <div class="body pl-2 pr-2 pb-3 details">
-                <b class="d-none d-lg-block pt-2 pb-2 text-center" style="font-size: 16px;color: var(--primary-color);"> Save towards a Goal</b>
-                <b class="d-block d-lg-none pt-2 pb-2 text-center" style="font-weight: 600; color: var(--primary-color);"> Save towards a Goal</b>
-
-                <p class="d-none d-lg-block text-justify" style="line-height: 33px;font-size: 14px;color: var(--primary-color);">
-                    Whether you're saving towards paying your rent, funding your business, education or just saving for the future,
-                    there's an investment plan that suits you on Doubble.
-                </p>
-                <p class="d-block d-lg-none text-justify" style="line-height: 53px;">
-                    Whether you're saving towards paying your rent, funding your business, education or just saving for the future,
-                    there's an investment plan that suits you on Doubble.
-                </p>
-            </div>
-        </div>
-        <div class="col-md-10 col-lg-3 mx-auto b-card" data-aos="zoom-in">
-            <?= $this->Html->image('homepage/bank-grade.png', ['alt' => 'sterling-bank-grade', 'class' => 'mx-auto d-block mt-1']) ?>
-
-            <div class="body pl-2 pr-2 pb-3 details">
-                <b class="d-none d-lg-block pt-2 pb-2 text-center" style="font-size: 16px;color: var(--primary-color);"> Bank-Grade Security</b>
-                <b class="d-block d-lg-none pt-2 pb-2 text-center" style="font-weight: 600; color: var(--primary-color);"> Bank-Grade Security</b>
-                <p class="d-none d-lg-block text-justify" style="line-height: 33px;font-size: 14px;color: var(--primary-color);">
-                Doubble is backed by a commercial bank that has been in business for about 60 years and whose funds are protected and insured by the NDIC.
-                </p>
-
-                <p class="d-block d-lg-none text-justify" style="line-height: 53px;">
-                Doubble is backed by a commercial bank that has been in business for about 60 years and whose funds are protected and insured by the NDIC.
-                </p>
-            </div>
-        </div>
-
-
     </div>
 </div>
 
@@ -110,10 +62,10 @@
 
 
                     <p class="subtitle d-none d-lg-block text-justify" style="font-size: 14px;color: var(--primary-color);font-weight: 100;">
-                        With Doubble rewards investment plans, you can make monthly contributions over a period of time and make as much as twice your money in value.<br/> Explore the Doubble rewards variants below:
+                        With Doubble rewards investment plans, you can make monthly contributions over a period of time and make as much as twice your money in value.<br /> Explore the Doubble rewards variants below:
                     </p>
                     <p class="subtitle details d-block d-lg-none text-justify">
-                        With Doubble rewards investment plans, you can make monthly contributions over a period of time and make as much as twice your money in value. <br/>Explore the Doubble rewards variants below:
+                        With Doubble rewards investment plans, you can make monthly contributions over a period of time and make as much as twice your money in value. <br />Explore the Doubble rewards variants below:
                     </p>
                     <div>
                         <div class="accordion" id="accordionExample">
@@ -219,26 +171,7 @@
         </div>
     </div>
 </div>
-<div class="row " style="background: var(--secondary-color); min-height: 350px; padding:50px">
-    <div class="col-md-10 mx-auto">
-        <div class="row">
-            <div class="col-md-12 col-lg-6 ml-auto my-auto">
-
-
-                <h4 class="text-center mb-4 mt-2 title d-block d-lg-none" data-aos="zoom-in" style="font-size:40px;color:var(--primary-color);margin-top: 30px;"> See
-                    what industry thought leaders have to say about Doubble. </h4>
-
-                <h4 class="text-center mt-2 title d-none d-lg-block " data-aos="zoom-in" style="font-size:26px;color:var(--primary-color);margin-top: 30px;"> See
-                    what industry thought leaders have to say about Doubble. </h4>
-            </div>
-
-            <div class="col-md-12 col-lg-6  my-auto mr-auto" data-aos="zoom-in">
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/yDwxRRNurDA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-
-</div>
+<?= $this->Element('review-section') ?>
 
 <div class="row five " style="padding-left: 90px; padding-right: 90px;">
     <div class="col-md-12 mb-4">
@@ -251,78 +184,9 @@
 
 
         <div class="row mx-auto">
-            <div class="col-md-12 col-lg-4 p-4 mt-4 mb-4">
-                <div class="row">
-                    <div class="col-md-12">
-                        <?= $this->Html->image('homepage/gift-your-investment.png', ['alt' => 'gift-your-investment', 'class' => 'img w-100 img-fluid']) ?>
-
-                    </div>
-                    <div class="col-md-12">
-                        <div class=" b-card3 details">
-                            <h6 class=" d-none d-lg-block mt-3" style="font-size: 20px;color: var(--primary-color);font-weight: bold;"> Gift Your Investment </h6>
-                            <h6 class="title-sm d-block d-lg-none " style="font-size: 40px;"> Gift Your Investment </h6>
-
-                            <p class="subtitle d-none d-lg-block text-justify" style="line-height:28px; font-size: 14px;color: var(--primary-color);font-weight: lighter;">
-                            You can give the best gift known to man - Money. Simply open an investment plan in the beneficiary’s name and account number and they start earning returns.
-                            </p>
-                            <p class="subtitle d-block d-lg-none " style="font-size: 42px;">
-                            You can give the best gift known to man - Money. Simply open an investment plan in the beneficiary’s name and account number and they start earning returns.
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="col-md-12 col-lg-4 p-4  mt-4 mb-4">
-                <div class="row">
-                    <div class="col-md-12" style="background: var(--primary-color);">
-                        <?= $this->Html->image('homepage/iphonex.png', ['alt' => 'iphonex', 'class' => 'img w-100 img-fluid']) ?>
-
-                    </div>
-                    <div class="col-md-12 p-0">
-                        <div class=" b-card3  details">
-                            <h6 class=" d-none d-lg-block mt-3" style="font-size: 20px;color: var(--primary-color);font-weight: bold;"> Decide Your Payback Plan </h6>
-                            <h6 class="title d-block d-lg-none " style="font-size: 40px;"> Decide Your Payback Plan </h6>
-
-
-                            <p class="subtitle d-none d-lg-block text-justify" style="line-height:28px;font-size: 14px;color: var(--primary-color);font-weight: normal;">
-                            We have designed a flexible interest payment schedule that allows you to decide when to receive your interest repayment, either monthly or as a lump sum.
-
-                            </p>
-                            <p class="subtitle d-block d-lg-none " style="font-size: 44px;">
-                            We have designed a flexible interest payment schedule that allows you to decide when to receive your interest repayment, either monthly or as a lump sum.
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 col-lg-4 p-4  mt-4 mb-4">
-                <div class="row">
-                    <div class="col-md-12">
-                        <?= $this->Html->image('homepage/self-service.png', ['alt' => 'sterling-self-service', 'class' => 'img w-100 img-fluid']) ?>
-
-                    </div>
-                    <div class="col-md-12">
-                        <div class=" b-card3  details">
-                            <h6 class=" d-none d-lg-block mt-3" style="font-size: 20px;color: var(--primary-color);font-weight: bold;"> Self Service </h6>
-                            <h6 class="title d-block d-lg-none " style="font-size: 40px;"> Self Service </h6>
-
-                            <p class="subtitle d-none d-lg-block text-justify" style="line-height:28px;font-size: 14px;color: var(--primary-color);font-weight: normal;"> You can start your investment process all by yourself on this platform
-                                and select a convenient date and time for your investment to commence.
-                            </p>
-                            <p class="subtitle d-block d-lg-none " style="font-size: 44px;"> You can start your investment process all by yourself on this platform
-                                and select a convenient date and time for your investment to commence.
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
+            <?= $this->Element('invest-section', ['image' => 'homepage/gift-your-investment.png', 'title' => 'Gift Your Investment', 'description' => "You can give the best gift known to man - Money. Simply open an investment plan in the beneficiary’s name and account number and they start earning returns."])?>
+            <?= $this->Element('invest-section', ['setBG'=>'style="background: var(--primary-color);"', 'image' => 'homepage/iphonex.png', 'title' => ' Decide Your Payback Plan', 'description' => " We have designed a flexible interest payment schedule that allows you to decide when to receive your interest repayment, either monthly or as a lump sum."])?>
+            <?= $this->Element('invest-section', ['image' => 'homepage/self-service.png', 'title' => 'Self Service', 'description' => "You can start your investment process all by yourself on this platform and select a convenient date and time for your investment to commence."])?>
         </div>
     </div>
 

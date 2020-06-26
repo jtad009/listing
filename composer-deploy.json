@@ -39,10 +39,10 @@
         }
     },
     "scripts": {
-        "post-root-package-install": [
-            "@php -r \"file_exists('phinx.yml') || copy('phinx.deploy.yml', 'phinx.yml');\""
+        "post-install-cmd": [
+            "@php -r \"file_exists('phinx.yml') || copy('phinx.deploy.yml', 'phinx.yml');\"",
+            "App\\Console\\Installer::postInstall"
         ],
-        "post-install-cmd": "App\\Console\\Installer::postInstall",
         "post-create-project-cmd": "App\\Console\\Installer::postInstall",
         "post-autoload-dump": "Cake\\Composer\\Installer\\PluginInstaller::postAutoloadDump",
         "check": [
@@ -57,14 +57,18 @@
         "set-staging-env": [
             "echo Switching to Staging Env",
             "@php -r \"file_exists('config/.env') || copy('config/.env.staging', 'config/.env');\"",
-            "@php -r \"file_exists('config/app.php') || copy('config/app.deploy.php', 'config/app.php');\""
+            "@php -r \"file_exists('config/app.php') || copy('config/app.staging.php', 'config/app.php');\""
         ],
         "set-env-dev": [
             "echo Switching to Dev Env",
-            "@php -r \"file_exists('config/.env') && copy('config/.env.dev', 'config/.env');\"",
+            "@php -r \"file_exists('config/.env') || copy('config/.env.staging', 'config/.env');\"",
+            "@php -r \"file_exists('config/app.php') || copy('config/app.devs.php', 'config/app.php');\""
+        ],
+        "set-env-test": [
+            "echo Switching to Dev Env",
+            "@php -r \"file_exists('config/.env') && copy('config/.env.test', 'config/.env');\"",
             "@php -r \"file_exists('config/app.php') || copy('config/app.default.php', 'config/app.php');\""
         ],
-        
         "test": [
             "@db-migrate-undo -e testing -t 0",
             "@db-migrate -e testing",

@@ -159,4 +159,4 @@
 ]) ?>
 
 
-<?= $this->Html->script('rewards') ?>
+<?= $this->Html->script('reward') ?>

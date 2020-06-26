@@ -17,7 +17,7 @@ return [
      * Development Mode:
      * true: Errors and warnings shown.
      */
-    'debug' => filter_var(env('DEBUG', true), FILTER_VALIDATE_BOOLEAN),
+    'debug' => filter_var(env('DEBUG', false), FILTER_VALIDATE_BOOLEAN),
 
     /**
      * Configure basic information about the application.
@@ -76,7 +76,7 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => env('SECURITY_SALT',  Security::setSalt(Security::randomString())),
+        'salt' => env('SECURITY_SALT', Security::setSalt(Security::randomString())),
     ],
 
     /**
@@ -88,8 +88,8 @@ return [
      * enable timestamping regardless of debug value.
      */
     'Asset' => [
-        //'timestamp' => true,
-        // 'cacheTime' => '+1 year'
+        'timestamp' => true,
+        'cacheTime' => '+10 days'
     ],
 
     /**
@@ -205,15 +205,15 @@ return [
      */
     'EmailTransport' => [
         'default' => [
-            'className' => env('MAIL_ENV', null),
+            'className' => 'Mail',
             /*
              * The following keys are used in SMTP transports:
              */
-            'host' => 'localhost',
-            'port' => 25,
+            'host' => 'smtp.gmail.com',
+            'port' => 587,
             'timeout' => 30,
-            'username' => null,
-            'password' => null,
+            'username' => env('DEFAULT_EMAIL_ADDRESS', null),
+            'password' => env('DEFAULT_EMAIL_PASSWORD', null),
             'client' => null,
             'tls' => null,
             'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
@@ -232,7 +232,7 @@ return [
     'Email' => [
         'default' => [
             'transport' => 'default',
-            'from' => env('DEFAULT_EMAIL_ADDRESS','you@localhost'),
+            'from' => env('DEFAULT_EMAIL_ADDRESS', null),
             //'charset' => 'utf-8',
             //'headerCharset' => 'utf-8',
         ],
@@ -256,51 +256,98 @@ return [
             'className' => Connection::class,
             'driver' => Mysql::class,
             'persistent' => false,
-            'host' => env('HOST',null),
+            'host' => '207.246.86.69',
+            /*
+             * CakePHP will use the default DB port based on the driver selected
+             * MySQL on MAMP uses port 8889, MAMP users will want to uncomment
+             * the following line and set the port accordingly
+             */
             //'port' => 'non_standard_port_number',
-            'username' => env('DB_USER',null),
-            'password' => env('DB_PASSWORD',null),
-            'database' => env('DATABASE_NAME',null),
+            'username' => 'doubble',
+            'password' => 'SXNyYWVsCg',
+            'database' => 'doubble_dev',
+            /*
+             * You do not need to set this flag to use full utf-8 encoding (internal default since CakePHP 3.6).
+             */
+            //'encoding' => 'utf8mb4',
+            'timezone' => 'UTC',
+            'flags' => [],
+            'cacheMetadata' => true,
+            'log' => false,
+
+            /**
+             * Set identifier quoting to true if you are using reserved words or
+             * special characters in your table or column names. Enabling this
+             * setting will result in queries built using the Query Builder having
+             * identifiers quoted when creating SQL. It should be noted that this
+             * decreases performance because each query needs to be traversed and
+             * manipulated before being executed.
+             */
+            'quoteIdentifiers' => false,
+
+            /**
+             * During development, if using MySQL < 5.6, uncommenting the
+             * following line could boost the speed at which schema metadata is
+             * fetched from the database. It can also be set directly with the
+             * mysql configuration directive 'innodb_stats_on_metadata = 0'
+             * which is the recommended value in production environments
+             */
+            'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
+
+            // 'url' => env('DATABASE_URL', null),
+        ],
+        'blog' => [
+            'className' => 'Cake\Database\Connection',
+            'driver' => 'Cake\Database\Driver\Mysql',
+            'persistent' => false,
+            'host' => '207.246.86.69',
+            //'port' => 'non_standard_port_number',
+            'username' => 'doubble',
+            'password' => 'SXNyYWVsCg',
+            'database' => 'doubble_dev',
+            'encoding' => 'utf8',
+            'timezone' => 'UTC',
+            'cacheMetadata' => true,
+            'quoteIdentifiers' => false,
+            'log' => false,
+            'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
+            // 'url' => env('DATABASE_TEST_URL', null),
+        ],
+        /**
+         * The test connection is used during the test suite.
+         */
+        'test' => [
+            'className' => Connection::class,
+            'driver' => Mysql::class,
+            'persistent' => false,
+            'host' => '207.246.86.69',
+            //'port' => 'non_standard_port_number',
+            'username' => 'doubble',
+            'password' => 'SXNyYWVsCg',
+            'database' => 'doubble_dev',
             //'encoding' => 'utf8mb4',
             'timezone' => 'UTC',
             'cacheMetadata' => true,
             'quoteIdentifiers' => false,
-            'log' => true,
-            //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
+            'log' => false,
+            'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
             // 'url' => env('DATABASE_TEST_URL', null),
         ],
         'test_blog' => [
             'className' => Connection::class,
             'driver' => Mysql::class,
             'persistent' => false,
-            'host' => env('HOST',null),
+            'host' => '207.246.86.69',
             //'port' => 'non_standard_port_number',
-            'username' => env('DB_USER',null),
-            'password' => env('DB_PASSWORD',null),
-            'database' => env('DATABASE_NAME',null),
+            'username' => 'doubble',
+            'password' => 'SXNyYWVsCg',
+            'database' => 'doubble_dev',
             //'encoding' => 'utf8mb4',
             'timezone' => 'UTC',
             'cacheMetadata' => true,
             'quoteIdentifiers' => false,
             'log' => true,
-            //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
-            // 'url' => env('DATABASE_TEST_URL', null),
-        ],
-        'blog' => [
-            'className' => Connection::class,
-            'driver' => Mysql::class,
-            'persistent' => false,
-            'host' => env('HOST',null),
-            //'port' => 'non_standard_port_number',
-            'username' => env('DB_USER',null),
-            'password' => env('DB_PASSWORD',null),
-            'database' => env('DATABASE_NAME',null),
-            //'encoding' => 'utf8mb4',
-            'timezone' => 'UTC',
-            'cacheMetadata' => true,
-            'quoteIdentifiers' => false,
-            'log' => true,
-            //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
+            'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
             // 'url' => env('DATABASE_TEST_URL', null),
         ],
     ],
@@ -376,5 +423,6 @@ return [
      */
     'Session' => [
         'defaults' => 'php',
+       
     ],
 ];

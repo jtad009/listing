@@ -130,4 +130,4 @@
 <!-- End Testimonial section  -->
 
 
-<?= $this->Html->script('fixed') ?>
+<?= $this->Html->script('script') ?>

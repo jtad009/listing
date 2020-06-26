@@ -1,7 +1,10 @@
 # CakePHP specific files #
 ##########################
 /config/app.php
+/config/app.dev.php
 /config/.env
+/config/.env.default
+phinx.yml
 /logs/*
 /tmp/*
 /vendor/*

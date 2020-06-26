@@ -1,12 +1,6 @@
 <?= $this->Html->css('target')?>
+<?= $this->Element('review-section') ?>
 
-<div class="row one" style="background-image: url('../img/review/header.svg');">
-    <div class="col-sm-10 mx-auto my-auto">
-        <h2 class="text-white text-center  title " data-aos="zoom-in">
-            Reviews </h2>
-
-    </div>
-</div>
 <!-- lg section begins -->
 <div class="row details d-none d-lg-block">
     <div class="col-md-10 " style="min-height: 70px;">

@@ -381,6 +381,8 @@ body {
 .six {
     min-height: 382px;
     background-color: var(--theme-three);
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 .six .b-card3 {
