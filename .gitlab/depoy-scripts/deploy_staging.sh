@@ -42,6 +42,8 @@ run_deploy() {
     git reset --hard HEAD
     echo ">> $(date) : Pulling latest update from remote branch $BRANCH"
     git pull $FULL_GIT_URL $BRANCH
+    echo ">> $(date) : Copying composer file..."
+    cp composer-deploy.json composer.json
     echo ">> $(date) : Installing dependencies..."
     composer install
     eval $COMPOSER_ENV

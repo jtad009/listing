@@ -49,11 +49,12 @@ RUN mkdir -p \
     tmp \
   && chmod -R 770 \
     tmp
-
+COPY ./arch/scripts/start.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/start.sh
 # Enable Apache modules and restart
 RUN a2enmod rewrite \
   && service apache2 restart
 
 EXPOSE 80
 
-CMD ["composer install", "composer set-test-dev", "composer check"]
+CMD ["start.sh"]
