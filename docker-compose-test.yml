@@ -11,6 +11,8 @@ services:
             - '8000:80'
         environment: 
             - VIRTUAL_HOST=blogsite.com
+            - APP_ENV=testing
+
 #        depends_on:
 #            - db
 #    db:
