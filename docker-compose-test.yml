@@ -1,0 +1,34 @@
+version: '3'
+services:
+    php:
+        build:
+            context: .
+            dockerfile: Dockerfile-test
+        volumes:
+            - ./:/var/www/html
+            - ./log/apache2/blog:/var/log/apache2
+        ports: 
+            - '8000:80'
+        environment: 
+            - VIRTUAL_HOST=blogsite.com
+            - APP_ENV=testing
+
+#        depends_on:
+#            - db
+#    db:
+#        image: mysql:5
+#        volumes:
+#            - db-data:/var/lib/mysql
+#        environment:
+#            MYSQL_DATABASE: cakephp_db
+#            MYSQL_ROOT_PASSWORD: root_password
+#    phpmyadmin:
+#        image: phpmyadmin/phpmyadmin:latest
+#        container_name: phpmyadmin
+#        links:
+#            - db
+#        ports:
+#            - 8082:80
+#volumes:
+#    db-data:
+#      external: false

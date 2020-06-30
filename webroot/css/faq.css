@@ -1,0 +1,121 @@
+.six {
+    height: auto !important;
+}
+
+.input-icons i {
+    position: absolute;
+    line-height: 37px;
+    padding-left: 10px;
+    color: var(--primary-color)
+}
+
+.input-icons {
+    width: 80%;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 3px !important;
+}
+
+.icon {
+    padding: 10px;
+    min-width: 40px;
+}
+
+.input-field {
+    width: 80%;
+    margin-left: 10%;
+    /* padding: 10px;  */
+    text-align: left;
+}
+
+input:focus {
+    outline: none !important;
+}
+
+.suggestions {
+    border: 1px solid #000;
+}
+
+.suggestions li {
+    list-style: none;
+    font-size: 20px;
+}
+
+#accordion {
+    min-width: -moz-available;
+    min-width: -webkit-fill-available;
+}
+
+.card-header {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.card-header a {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    /* or 102% */
+    letter-spacing: 0.2px;
+    color: var(--primary-color);
+}
+
+.card-header a:hover {
+    text-decoration: none;
+}
+
+.card-header a>#icon {
+    color: var(--theme-three);
+}
+
+.card-header a>#icon:hover {
+    font-weight: bold;
+    line-height: 24px;
+    font-size: var(--font-title-3) !important;
+}
+
+.card-body {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    /* line-height: 24px; */
+    /* or 102% */
+    letter-spacing: 0.2px;
+    color: var(--primary-color);
+}
+
+#accordion .card .card-header {
+    background: white;
+    width: 100%;
+    border-bottom: 2px solid #D7E1E4;
+}
+
+.collapsed.accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'FontAwesome';
+    content: "\f107";
+    float: right;
+    color: var(--theme-three);
+}
+
+.accordion-toggle:after {
+    /* symbol for "collapsed" panels */
+    font-family: 'FontAwesome';
+    content: "\f107";
+    content: "\f104";
+    float: right;
+    color: var(--theme-three);
+}
+
+@media only screen and (max-width: 992px) {
+    .card-header a {
+        font-weight: 300;
+        font-size: 28px !important;
+        line-height: 30px;
+    }
+    .details {
+        font-weight: 100;
+        font-size: 25px !important;
+    }
+}
