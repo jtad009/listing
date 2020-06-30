@@ -2,6 +2,7 @@
 FULL_GIT_URL=https://oauth2:go3hy5dL8znZCA2e_Zia@gitlab.com/webcoupers_/doubble.git
 APP_DIR=doubble-develop
 BRANCH=develop
+COMPOSER_ENV="composer set-dev-env"
 LOG_FILE="$HOME/deploy-logs/doubble-develop.log"
 
 case $DEPLOY_ENV in
@@ -16,6 +17,7 @@ case $DEPLOY_ENV in
   staging)
     APP_DIR=doubble
     BRANCH=staging
+    COMPOSER_ENV="composer set-staging-env"
     LOG_FILE="$HOME/deploy-logs/doubble-staging.log"
     ;;
 
@@ -40,7 +42,13 @@ run_deploy() {
     git reset --hard HEAD
     echo ">> $(date) : Pulling latest update from remote branch $BRANCH"
     git pull $FULL_GIT_URL $BRANCH
-#    cp ".env.$BRANCH" .env
+    echo ">> $(date) : Installing dependencies..."
+    composer install
+    eval $COMPOSER_ENV
+    echo ">> $(date) : Running migration..."
+    composer db-migrate
+    echo ">> $(date) : Seeding..."
+    composer db-seed
 }
 
 git_clone() {
