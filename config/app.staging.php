@@ -76,7 +76,7 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => env('SECURITY_SALT', Security::setSalt(Security::randomString())),
+        'salt' => Security::setSalt(Security::randomString()),
     ],
 
     /**
