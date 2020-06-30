@@ -4,7 +4,7 @@
  * @var \App\View\AppView $this
  */
 $articleData = $articles->toArray();
-
+$this->assign('title', 'Blog -  Doubble by Sterling Bank Plc');
 
 /**
  * Split array into section as required by design. 

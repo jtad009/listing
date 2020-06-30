@@ -23,20 +23,12 @@ $cakeDescription = isset($page) ? strtoupper($page) : APP_NAME;
     <link rel="icon" href="https://spectaprime.azureedge.net/doubble/v2/assets/favicon.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/themes/bootstrap.css"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/alertify.min.css" rel="stylesheet"/>
-    <title>
-    <?= $this->fetch('title') ?>:<?= $cakeDescription ?>
-        
-    </title>
-   
-  
-    
+    <title> <?= $this->fetch('title') ?> </title>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
     <script src="https://code.jquery.com/jquery-3.1.0.js"  crossorigin="anonymous"></script>
     <?= $this->Html->script('helpers')?>
-
-
 </head>
 
 <body>

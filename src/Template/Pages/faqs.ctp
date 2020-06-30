@@ -1,5 +1,9 @@
 <?= $this->Html->css('blog.css') ?>
 <?= $this->Html->css('faq.css') ?>
+<?php 
+$this->assign('title', 'Frequently Asked Questions - Doubble by Sterling Bank Plc');
+$this->assign('pageDescription', 'Answers to all your questions about the Doubble platform, wealth, savings and investments to help you build wealth and attain financial freedom'); 
+?>
 <div class="row one">
     <div class="col-md-6 primary-color-bg">
 
@@ -426,4 +430,3 @@
         &nbsp;
     </div>
 </div>
-

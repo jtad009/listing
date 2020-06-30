@@ -1,4 +1,8 @@
 <?= $this->Html->css('target.css') ?>
+<?php 
+    $this->assign('title', 'Doubble Target- See our investment plans and start investing today');
+    $this->assign('pageDescription', 'A wide array of choices to suit your financial capability and your goals. Doubble gives you investment options and products that help you build wealth');
+?>
 <div class="row one d-none">
     <div class="d-none d-lg-block col-md-6 primary-color-bg  my-auto ">
         <div style="padding:60px 90px;" class="">

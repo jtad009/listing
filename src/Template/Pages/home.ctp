@@ -1,5 +1,7 @@
 <?= $this->Html->css('style.css') ?>
-
+<?php 
+$this->assign('title','Doubble by Sterling Bank Plc');
+?>
 <div class=" row one">
     <div class="col-sm-3 d-none d-lg-block">
         <h1 class="title" data-aos="zoom-in" style="font-size: 50px!important;">

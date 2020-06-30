@@ -10,10 +10,7 @@ services:
         environment: 
             - VIRTUAL_HOST=bloged.com
         networks: 
-            - d4_default
-            
-       
-      
+            - d4_default    
 networks: 
     d4_default: 
         external: 

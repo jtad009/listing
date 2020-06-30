@@ -1,5 +1,8 @@
 <?= $this->Html->css('target.css') ?>
-
+<?php 
+    $this->assign('title', 'Doubble Fixed- See our investment plans and start investing today');
+    $this->assign('pageDescription', 'A wide array of choices to suit your financial capability and your goals. Doubble gives you investment options and products that help you build wealth');
+?>
 <?= $this->element('productHeader', [
     'title' => 'Doubble Fixed',
     'subtitle' => 'Invest for your future in Naira & Dollars.',

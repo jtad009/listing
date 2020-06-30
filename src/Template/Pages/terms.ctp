@@ -1,4 +1,9 @@
 <?= $this->Html->css('target') ?>
+<?php 
+    $this->assign('title', 'Terms & Conditions - Doubble by Sterling Bank Plc');
+    $this->assign('pageDescription', 'All terms and conditions for joining the doubble.ng platform. Rules for investment and all conditions for interest and  profits.');
+?>
+
 <div class="row">
     <div class="col-md-10 " style="min-height: 70px;">
         &nbsp;

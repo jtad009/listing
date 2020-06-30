@@ -1,6 +1,6 @@
 <?php
 $cakeDescription = isset($page) ? strtoupper($page) : APP_NAME;
-$this->assign('title', 'Sterling Doubble');
+// $this->assign('title', 'Sterling Doubble');
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,12 +22,8 @@ $this->assign('title', 'Sterling Doubble');
     <link rel="icon" href="https://spectaprime.azureedge.net/doubble/v2/assets/favicon.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/themes/bootstrap.css"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/alertify.min.css" rel="stylesheet"/>
-    <title>
-        
-        <?= $this->fetch('title') ?> : <?= $cakeDescription ?>
-    </title>
-   
-  
+    <title><?= $this->fetch('title') ?></title>
+    <meta name="description" content="<?= $this->fetch('pageDescription') ?>">
     <?= $this->Html->css('header.css') ?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
