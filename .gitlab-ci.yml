@@ -1,7 +1,36 @@
 image: docker:latest
 
+services:
+ - docker:dind
+
+cache:
+ paths:
+  - vendor/
+
 stages:
+ - test
  - deploy
+
+test_testing:
+ stage: test
+ only:
+  - /^(?:(?!staging|master).)*$\r?\n?/
+ before_script:
+  - export STAGE=test
+  - docker info
+  - apk update
+  - apk upgrade
+  - apk add python3 python3-dev py-pip build-base libffi-dev openssl-dev
+  - pip install docker-compose
+  - cp composer-deploy.json composer.json
+ script:
+  - echo running tests in $STAGE environment
+  - docker image prune -f
+  - docker-compose -f docker-compose-test.yml build
+  - docker-compose -f docker-compose-test.yml up
+ artifacts:
+  paths:
+   - vendor/
 
 deploy_develop:
  stage: deploy
