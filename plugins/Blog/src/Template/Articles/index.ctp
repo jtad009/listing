@@ -146,11 +146,11 @@ $result = splitArray($articleData, 3);
         
         //check that array before last isnt null
             if( !empty($result[2][1])):
-             echo  $this->element('big-post-card', ['title' => $result[2][1]->title, 'slug' => $result[2][1]->slug, 'image' => $result[2][1]->cover_image, 'readTime' => $result[2][1]->readTime]);
+             echo  $this->element('big-post-card', ['cardSize'=>6,'title' => $result[2][1]->title, 'slug' => $result[2][1]->slug, 'image' => $result[2][1]->cover_image, 'readTime' => $result[2][1]->readTime]);
             endif;
-            //check the last array isnt null
+            //check the last array isnt null //blog-post-single
             if( !empty($result[2][2]) ):
-              echo $this->element('blog-post-single', ['title' => $result[2][2]->title, 'slug' => $result[2][2]->slug, 'image' => $result[2][2]->cover_image, 'readTime' => $result[2][2]->readTime]) ;
+              echo $this->element('big-post-card', ['cardSize'=>6,'title' => $result[2][2]->title, 'slug' => $result[2][2]->slug, 'image' => $result[2][2]->cover_image, 'readTime' => $result[2][2]->readTime]) ;
             endif;
         ?>
 

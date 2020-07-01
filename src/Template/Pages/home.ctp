@@ -30,8 +30,8 @@ $this->assign('title','Doubble by Sterling Bank Plc');
 
 </div>
 <div class="row two" style="padding-right: 90px; padding-left: 90px;">
-    <div class="col-sm-10 mx-auto my-auto">
-        <div class="row ml-auto my-auto mr-auto">
+    <div class="col-sm-12 col-lg-10 mx-auto my-auto">
+        <div class="row ml-auto my-auto mr-auto mt-3">
             <?= $this->Element('homepage-section-2-card', ['image' => 'homepage/low-risk-returns.png', 'title' => 'Low Risk, High Returns', 'description' => ' You are not just saving, but investing in a guaranteed system that has very little risk but gives very high returns.']) ?>
             <?= $this->Element('homepage-section-2-card', ['image' => 'homepage/save-towards-a-goal.png', 'title' => 'Save towards a Goal', 'description' => "Whether you're saving towards paying your rent, funding your business, education or just saving for the future,
                     there's an investment plan that suits you on Doubble."]) ?>
