@@ -20,7 +20,7 @@
     <title>
         <?= $this->fetch('title') ?>
     </title>
-    <?= $this->Html->meta('icon') ?>
+    <link rel="icon" href="https://spectaprime.azureedge.net/doubble/v2/assets/favicon.ico" />
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>

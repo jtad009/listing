@@ -34,7 +34,7 @@
 
 
     </div>
-    <div class="d-none d-lg-block col-md-6 secondary-color" style="background: url(<?= BASE_DOMAIN. $image?>);background-position: 50% 100%;background-size: cover;">
+    <div class="d-none d-lg-block col-md-6 secondary-color" style="background: url(<?= $image ?>);background-position: 50% 100%;background-size: cover;">
         <img src="" class="img img-fluid" />
     </div>
 </div>

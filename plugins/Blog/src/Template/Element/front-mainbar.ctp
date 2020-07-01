@@ -12,13 +12,14 @@
             </li>
             <?php if(isset($_SESSION['Auth']['User'])):?>
              <?php if($_SESSION['Auth']['User']['canWrite'] == 1):?>
+              <li class="nav-item"> <?= $this->Html->link('Reviews',['controller'=>'reviews','action'=>'add','plugin'=>null],['class'=>'nav-link'])?></li>
             <li class="nav-item"> <?= $this->Html->link('My Profile',['controller'=>'users','action'=>'view', $_SESSION['Auth']['User']['id']],['class'=>'nav-link'])?></li>
             <li class="nav-item"> <?= $this->Html->link('New Article',['controller'=>'articles','action'=>'add'],['class'=>'nav-link'])?></li>
             <li class="nav-item"> <?= $this->Html->link('Categories',['controller'=>'categories','action'=>'index'],['class'=>'nav-link'])?></li>
            
             <li class="nav-item"> <?= $this->Html->link('Tags',['controller'=>'Tags','action'=>'index'],['class'=>'nav-link'])?></li>
              <?php endif;?>
-             <!-- <li class="nav-item"> <?php $this->Html->link('Distributors',['controller'=>'distributors','action'=>'index'],['class'=>'nav-link'])?></li> -->
+             
             <li class="nav-item"> <?= $this->Html->link('MailList',['controller'=>'subscriptions','action'=>'index'],['class'=>'nav-link'])?></li>
             <li class="nav-item"> <?= $this->Html->link('Logout',['controller'=>'users','action'=>'logout'],['class'=>'nav-link'])?></li>
             <?php else:?>

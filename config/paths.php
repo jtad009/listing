@@ -96,7 +96,7 @@ define('PDF_UPLOAD_PATH',WWW_ROOT . 'pdf/');
 define('APP_NAME', 'Doubble');
 define('APP_EMAIL', env('DEFAULT_EMAIL_ADDRESS',null));
 define('NO_REPLY', 'no-reply@wbcstaging.com');
-define('BASE_DOMAIN', env('BASE_DOMAIN','https://doubble_dev.wbcstaging.com'));
+define('BASE_DOMAIN', env('BASE_DOMAIN','https://doubble_dev.wbcstaging.com/'));
 define('TWITTER_HANDLE', '');
 define('INSTAGRAM_CLIENT_ID','');
 define('AUDIENCE_ID', 'ca4bf2eabb');

@@ -6,7 +6,7 @@
 <?= $this->element('productHeader', [
     'title' => 'Doubble Fixed',
     'subtitle' => 'Invest for your future in Naira & Dollars.',
-    'image' => 'img/fixed-investment/bg.png',
+    'image' => '/img/fixed-investment/bg.png',
     'description' => 'The fixed investment plan allows you to invest or save a fixed amount of money for a minimum of
     30 days and earn up to 5% per annum interest rate at maturity.
     You can invest in Naira or US dollars and you get all your funds plus interest at maturity.'

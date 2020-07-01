@@ -67,7 +67,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/reward-product', ['controller' => 'Pages', 'action' => 'reward-product']);
     $routes->connect('/target-product', ['controller' => 'Pages', 'action' => 'target-product']);
     $routes->connect('/faqs', ['controller' => 'Pages', 'action' => 'faqs']);
-    $routes->connect('/review', ['controller' => 'Pages', 'action' => 'review']);
+    $routes->connect('/review', ['controller' => 'Reviews', 'action' => 'index']);
     $routes->connect('/terms', ['controller' => 'Pages', 'action' => 'terms']);
 
 

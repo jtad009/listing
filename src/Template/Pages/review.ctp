@@ -46,6 +46,9 @@
         <br />
         <hr />
     </div>
+    <div class="col-md-8 mx-auto">
+        
+    </div>
     <div class="col-md-10 " style="min-height: 70px;">
         &nbsp;
     </div>

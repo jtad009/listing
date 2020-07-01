@@ -45,10 +45,11 @@
         <img src="" class="img img-fluid" />
     </div>
 </div>
+
 <?= $this->element('productHeader', [
     'title' => 'Doubble target',
     'subtitle' => 'Achieve your financial goals',
-    'image' => 'img/target-investments/bg.png',
+    'image' => '/img/target-investments/bg.png',
     'description' => 'Our target investment plan does exactly what the name implies, 
     helps you meet a financial goal or target without having to come up with the whole cash. 
     Whether you are saving for a big life event like a wedding or you plan to get that MBA, 

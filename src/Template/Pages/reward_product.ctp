@@ -7,7 +7,7 @@
 <?= $this->element('productHeader', [
     'title' => 'Doubble Reward',
     'subtitle' => 'Save towards your future goals.',
-    'image' => 'img/rewards-investment/bg.png',
+    'image' => '/img/rewards-investment/bg.png',
     'description' => 'Either you are saving up for a future mortgage, your education or that big purchase, Doubble rewards suit your future needs.'
 ]) ?>
 

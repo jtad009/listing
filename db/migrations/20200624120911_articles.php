@@ -33,7 +33,7 @@ class Articles extends AbstractMigration
     {
         $exists = $this->hasTable('articles');
         
-        // if (!$exists) {
+        if (!$exists) {
 
 
             $table = $this->table('articles', ['id' => false, 'primary_key' => ['id']]);
@@ -98,7 +98,7 @@ class Articles extends AbstractMigration
                 'null' => false,
             ]);
             $table->create();
-        // }
+        }
     }
     /**
      * Drop Database
