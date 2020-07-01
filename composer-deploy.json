@@ -56,17 +56,17 @@
         "db-seed": "phinx seed:run ",
         "set-staging-env": [
             "echo Switching to Staging Env",
-            "@php -r \"file_exists('config/.env') || copy('config/.env.staging', 'config/.env');\"",
+            "@php -r \"copy('config/.env.staging', 'config/.env');\"",
             "@php -r \"copy('config/app.staging.php', 'config/app.php');\""
         ],
         "set-dev-env": [
             "echo Switching to Dev Env",
-            "@php -r \"file_exists('config/.env') || copy('config/.env.staging', 'config/.env');\"",
+            "@php -r \"copy('config/.env.staging', 'config/.env');\"",
             "@php -r \"copy('config/app.devs.php', 'config/app.php');\""
         ],
         "set-test-dev": [
             "echo Switching to Dev Env",
-            "@php -r \"file_exists('config/.env') || copy('config/.env.test', 'config/.env');\"",
+            "@php -r \"copy('config/.env.test', 'config/.env');\"",
             "@php -r \"copy('config/app.default.php', 'config/app.php');\""
         ],
         "test": [
