@@ -1,6 +1,9 @@
 <?= $this->Html->css('target')?>
 <?= $this->Element('review-section') ?>
-
+<?php 
+    $this->assign('title', 'Reviews - Doubble by Sterling Bank Plc');
+    $this->assign('pageDescription', 'see what people said about us');
+?>
 <!-- lg section begins -->
 <div class="row details d-none d-lg-block">
     <div class="col-md-10 " style="min-height: 70px;">
