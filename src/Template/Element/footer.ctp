@@ -17,7 +17,7 @@
     <div class="d-none d-lg-block col-sm-12 col-lg-2">
         <p class="title mt-3">Resources</p>
         <p><?= $this->Html->link('Blog', ['controller' => 'articles', 'action' => 'index', 'plugin' => 'Blog'], ['class' => 'mt-1']) ?></p>
-        <p><?= $this->Html->link('Reviews', ['controller' => 'pages', 'action' => 'review', 'plugin' => null,], ['class' => 'mt-1']) ?></p>
+        <p><?= $this->Html->link('Reviews', ['controller' => 'Reviews', 'action' => 'index', 'plugin' => null,], ['class' => 'mt-1']) ?></p>
         <p><?= $this->Html->link('FAQ', ['controller' => 'pages', 'action' => 'faqs', 'plugin' => null], ['class' => 'mt-1']) ?></p>
         <p><?= $this->Html->link('T&C', ['controller' => 'pages', 'action' => 'terms', 'plugin' => null], ['class' => 'mt-1']) ?></p>
 

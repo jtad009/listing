@@ -28,7 +28,7 @@
 
             </li>
             <li class="nav-item">
-                <?= $this->Html->link('Reviews', ['controller' => 'pages', 'action' => 'review', 'plugin' => false], ['class' => isset($page) && $page === 'reviews' ? 'nav-link active' :  'nav-link']) ?>
+                <?= $this->Html->link('Reviews', ['controller' => 'Reviews', 'action' => 'index', 'plugin' => false], ['class' => isset($page) && $page === 'reviews' ? 'nav-link active' :  'nav-link']) ?>
 
             </li>
             <li class="nav-item">
