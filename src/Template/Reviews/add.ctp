@@ -13,7 +13,7 @@
         <br />
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-
+          <li class="breadcrumb-item"><?= $this->Html->link(__('Dashboard'), ['controller' => 'categories','action'=>'index','plugin'=>'blog']) ?></li>
             <li class="breadcrumb-item"><?= $this->Html->link(__('Reviews'), ['action' => 'index']) ?></li>
             <li class="breadcrumb-item active"><?= $this->Html->link(__('Add'), ['action' => 'add']) ?></li>
           </ol>
