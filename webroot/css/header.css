@@ -48,6 +48,7 @@ body {
     border-radius: 3px;
     background-color: var(--primary-color) !important;
     color: white !important;
+    
 }
 
 .title {
@@ -284,6 +285,9 @@ body {
     .terms {
         font-size: inherit !important;
         line-height: inherit !important;
+    }
+    .nav-link.active {
+        padding: 2px 30px;
     }
 }
 

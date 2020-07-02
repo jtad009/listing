@@ -43,10 +43,10 @@
             <?php endif; ?>
             <li class="nav-item">
             
-            <a href="https://apply.doubble.ng/" target="_blank"  class="btn btn-primary w-100 d-block d-lg-none" data-aos="zoom-in">INVEST NOW</a>
+            <a href="https://apply.doubble.ng/" target="_blank"  class="btn btn-primary w-100 d-block d-lg-none" data-aos="zoom-in-down">INVEST NOW</a>
             </li>
         </ul>
            
     </div>
-    <a href="https://apply.doubble.ng/" target="_blank" style="width: 120px !important;position:absolute; right:30px" class="btn btn-primary d-none d-lg-block" data-aos="zoom-in">INVEST NOW</a>
+    <a href="https://apply.doubble.ng/" target="_blank" style="width: 120px !important;position:absolute; right:30px" class="btn btn-primary d-none d-lg-block" data-aos="zoom-in-down" data-aos-duration="700">INVEST NOW</a>
 </nav>
