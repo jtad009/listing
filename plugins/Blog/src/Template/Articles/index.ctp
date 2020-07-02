@@ -72,7 +72,7 @@ $result = splitArray($articleData, 3);
       <div class="col-md-11 mx-auto">
         <div class="row">
           <?php foreach ($result[1] as $article) : ?>
-            <?= $this->element('post-card-2', ['slug' => $article->slug, 'title' => $article->title, 'image' => $article->cover_image, 'readTime' => $article->readTime]) ?>
+            <?= $this->element('post-card-2', ['showRead'=>true,'slug' => $article->slug, 'title' => $article->title, 'image' => $article->cover_image, 'readTime' => $article->readTime]) ?>
           <?php endforeach; ?>
 
         </div>

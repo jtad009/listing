@@ -4,8 +4,8 @@
         <?= $this->Html->image('passport/blogs/400/'.$image, ['alt'=>$slug, 'class'=>'card-img-top']) ?>
         <div class="card-body">
             <h4 class="card-title d-none"></h4>
-            <p class="card-text"><?= $title ?></p>
-            <?= $this->Html->link('Read More', ['controller'=>'articles', 'action'=>'view', $slug ], ['rel'=>"canonical",'class'=>'float-right'])?>
+            <p class="card-text mt-4"><?= $title ?></p>
+            <?= $this->Html->link(strtoupper('Read More'), ['controller'=>'articles', 'action'=>'view', $slug ], ['rel'=>"canonical",'class'=>'float-right'])?>
             
         </div>
     </div>

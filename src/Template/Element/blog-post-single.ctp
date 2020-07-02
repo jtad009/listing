@@ -7,8 +7,8 @@
       <h4 class="card-title d-none"></h4>
       <p class="card-text"><?= $title ?></p>
       <br />
-      <span class="position-absolute readTime"><?= $readTime ?></span>
-      <?= $this->Html->link('Read More', ['controller' => 'articles', 'action' => 'view', $slug], ['rel'=>"canonical",'class' => 'position-absolute float-right']) ?>
+      <span class="position-absolute readTime"><?= strtoupper($readTime) ?></span>
+      <?= $this->Html->link(strtoupper('Read More'), ['controller' => 'articles', 'action' => 'view', $slug], ['rel'=>"canonical",'class' => 'position-absolute float-right']) ?>
     </div>
   </div>
 </div>

@@ -3,10 +3,10 @@
         <?= $this->Html->image('passport/blogs/'.$image, ['alt' => $slug, 'class' => 'card-img-top']) ?>
         <div class="card-body">
             <h4 class="card-title d-none"></h4>
-            <p class="card-text"><?= $title ?></p>
-            <p class="d-flex justify-content-between">
-                <span class="readTime"><?= $readTime ?></span>
-                <?= $this->Html->link('Read More', ['controller' => 'articles', 'action' => 'view', $slug], ['rel'=>"canonical",'class' => 'float-right']) ?>
+            <p class="card-text " ><?= $title ?></p>
+            <p class="d-flex justify-content-between" style="margin-bottom:0px">
+                <span class="readTime"><?= strtoupper($readTime) ?></span>
+                <?= $this->Html->link(strtoupper('Read More'), ['controller' => 'articles', 'action' => 'view', $slug], ['rel'=>"canonical",'class' => 'float-right']) ?>
             </p>
         </div>
     </div>

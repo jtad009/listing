@@ -68,8 +68,8 @@
     padding-top: 14px;
     padding-bottom: 14px;
     color: var(--primary-color);
-    font-size: var(--font-small-18);
-    height: 109px;
+    font-size: var(--font-small-16);
+    min-height: 109px;
 }
 
 .blogCard a {
@@ -118,6 +118,7 @@ span.readTime {
     .blog .card-text, .blog2 .card-text, .blogCard .card-text {
         color: var(--primary-color);
         font-size: var(--font-title-3);
+        min-height: 110px;
     }
     .blogCard a, span.readTime {
         font-size: 30px;

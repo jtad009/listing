@@ -60,7 +60,7 @@ $this->assign('title', $article->extractExcerpt);
                 <?php
 
                 foreach ($similar  as $article) :
-                    echo $this->element('post-card-2', ['slug' => $article->slug, 'title' => $article->title, 'image' => $article->cover_image, 'readTime' => $article->readTime]);
+                    echo $this->element('post-card-2', ['showRead'=>false, 'slug' => $article->slug, 'title' => $article->title, 'image' => $article->cover_image, 'readTime' => $article->readTime]);
                 endforeach;
                 ?>
 
