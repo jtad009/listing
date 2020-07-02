@@ -17,7 +17,7 @@
         <?=
             $this->element('product-section-blue-top', [
                 'title' => 'Rewards Investment Products',
-                'subtitle' => 'Doubble 3',
+                'logo' => 'rewards-investment/3.svg',
                 'description' => 'Doubble 3 is a 6 - year investment contract that offers a 25% return on invested funds. 
                                     Monthly contributions are made by you for the first 3 years and your invested amount 
                                     plus returns are paid to you every month for the next 3 years. 
@@ -29,7 +29,7 @@
         ?>
 
         <?= $this->element('product-section-wh', [
-                            'subtitle' => 'Doubble 5',
+                            'logo' => 'rewards-investment/5.svg',
                             'description' => 'Doubble 5 is a 10-year investment contract that offers a 50% profit on the money you invest. Monthly contributions are made by you for the first 5 years and your invested amount plus returns are paid to you every month for the next 5 years. This means you make half your investment in returns over the span of 5 years. For example, If you invest N 1,000,000 in the first 5 years, you make N1,500,000 in returns spread over the next 5 years.',
                             'image' => 'rewards-investment/Doubble-5-animation.gif',
                             'width'=>'75'
@@ -37,7 +37,7 @@
       
         <?=
             $this->element('product-section-blue-in', [
-                            'subtitle' => 'Doubble 10',
+                            'logo' => 'rewards-investment/10.svg',
                             'description' => 'Doubble 10 is a 15-year plan that offers a 100% profit on the money you invest. You make a monthly deposit for 5 years and you get the exact amount that you have saved plus interests paid back to you monthly in another 10 years. This means If your total savings over 5 years is N 300,000, you get N600,000 in returns for the next 10 years.',
                             'image' => 'rewards-investment/Doubble-10-animation.gif',
                             'width'=>'75'
@@ -47,7 +47,7 @@
 
        
         <?= $this->element('product-section-wh', [
-                            'subtitle' => 'Doubble Lump Sum',
+                            'logo' => 'rewards-investment/lumpsum.svg',
                             'description' => 'Doubble Lump Sum is a 10-year investment plan that gives you double your money over a 10 year period after a 5 year interval. Contribution is made in one bulk amount and you get 100% returns on your money starting from year 6 to year 10. For example, If you invest N 1,000,000, you wait for a period of 5 years after which you get paid N 2,000,000 over a 5 year period from year 6 to year 10.',
                             'image' => 'rewards-investment/Doubble-lumpsum-animation.gif',
                             'width'=>'75'

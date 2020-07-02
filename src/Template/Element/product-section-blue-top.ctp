@@ -1,14 +1,14 @@
 
 <div style="background:var(--theme-three)">
-    <div class="col-md-12 d-block d-lg-none mb-4">
+    <div class="col-md-12  mb-4">
         <br />
         <br />
-        <h2 class="title  text-white text-center mt-3" data-aos="zoom-in"><?= $title ?></h2>
+        <h2 class="title  text-white text-center mt-3 d-none d-lg-block" data-aos="zoom-in"><?= isset($logo) ? $title : '' ?></h2>
+        <h2 class="title  text-white text-center mt-3 d-block d-lg-none" data-aos="zoom-in"><?=  $title ?></h2>
     </div>
     <div class="col-md-10 mx-auto   " data-aos="zoom-in">
         <div class="row">
             <div class="col-md-12  mb-4">
-                <br />
                 <br />
 
             </div>
@@ -19,9 +19,9 @@
             </div>
 
             <div class="col-md-12 col-lg-6 my-auto ">
-                <h2 class="title text-white   d-none d-lg-block"><?= $title?></h2>
+                <h2 class="title text-white   d-none d-lg-block"><?= isset($logo) ? '' : $title?></h2>
                 <div class=" b-card3  text-justify" style="background: transparent !important;">
-                    <h6 class="title mt-4"> <?= $subtitle ?> </h6>
+                    <h6 class="title mt-4"> <?= !isset($logo) ? $subtitle : $this->Html->image($logo, ['height'=>'60', 'class'=>'d-none d-lg-block']) ?> </h6>
                     <p class="subtitle text-justify lh"> <?= $description ?> 
 
                     </p>

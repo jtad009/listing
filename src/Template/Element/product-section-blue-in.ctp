@@ -13,7 +13,7 @@
             <div class="col-md-12 col-lg-6 my-auto ">
 
                 <div class=" b-card3  text-justify" style="background: transparent !important;">
-                    <h6 class="title mt-4"> <?= $subtitle ?> </h6>
+                    <h6 class="title mt-4"> <?= !isset($logo) ? $subtitle : $this->Html->image($logo, ['height'=>'60', 'class'=>'d-none d-lg-block']) ?> </h6>
                     <p class="subtitle text-justify lh"> <?= $description ?>
 
 
