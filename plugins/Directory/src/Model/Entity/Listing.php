@@ -16,11 +16,14 @@ use Cake\ORM\Entity;
  * @property string $state_id
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
+ * @property bool $published
+ * @property bool $approved
  *
  * @property \Directory\Model\Entity\State $state
  * @property \Directory\Model\Entity\ListingImage[] $listing_images
  * @property \Directory\Model\Entity\ListingReview[] $listing_reviews
  * @property \Directory\Model\Entity\ListingView[] $listing_views
+ * @property \Directory\Model\Entity\Category[] $categories
  */
 class Listing extends Entity
 {
@@ -43,10 +46,13 @@ class Listing extends Entity
         'state_id' => true,
         'created' => true,
         'modified' => true,
+        'published' => true,
+        'approved' => true,
         'state' => true,
         'listing_images' => true,
         'listing_reviews' => true,
         'listing_views' => true,
+        'categories' => true,
     ];
     public function _getUrl(){
         return 'http://google.com';

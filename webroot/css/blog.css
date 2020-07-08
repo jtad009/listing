@@ -132,7 +132,7 @@ span.readTime {
     min-height: 246px;
 }
 .views, .ratings{
-    width:40px;
+    width:60px;
     padding:8px;
     font-size: 1rem;
 }

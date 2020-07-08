@@ -30,20 +30,15 @@ $cakeDescription = isset($page) ? strtoupper($page) : APP_NAME;
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
     <script src="https://code.jquery.com/jquery-3.1.0.js"  crossorigin="anonymous"></script>
-    <?= $this->Html->script('helpers')?>
+
 
 
 </head>
 
 <body>
 <?= $this->Element('navbar'); ?>
-        
-
     <div class="container-fluid">
 <br/>
-
-
-       
             <?= $this->fetch('content') ?>
         
         <?= $this->Element('footer'); ?>
@@ -62,6 +57,7 @@ $cakeDescription = isset($page) ? strtoupper($page) : APP_NAME;
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <?= $this->Html->script('stickyMenu') ?>
+    <?= $this->Html->script('Directory.script') ?>
     <script>
         $(window).on('load', function () {
             AOS.refresh();
@@ -81,7 +77,7 @@ $cakeDescription = isset($page) ? strtoupper($page) : APP_NAME;
 </body>
 
 
-<?= $this->Html->script('faq') ?>
+
 
 
 </html>

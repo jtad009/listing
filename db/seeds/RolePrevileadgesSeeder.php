@@ -56,19 +56,33 @@ class RolePrevileadgesSeeder extends AbstractSeed
         $adminDate = [
             [
                 'id' => $faker->uuid,
-                'role_id' => '14737777-cd91-3c75-8193-4b25f7ebc7bf',
-                'previleadge_id' => '1ef84b99-0703-36b5-8ba7-45c620014444',
+                'role_id' => '1ef84b99-0703-36b5-8ba7-45c620014444',
+                'previleadge_id' => 'a3de260d-3361-33f2-84ac-4bfef2186bce',
                 'modified'=> date('Y-m-d H:i:s'),
                 'created'=> date('Y-m-d H:i:s'),
             ],
             [
                 'id' => $faker->uuid,
-                'role_id' => '14737777-cd91-3c75-8193-4b25f7ebc7bf',
+                'role_id' => '1ef84b99-0703-36b5-8ba7-45c620014444',
                 'previleadge_id' => '3cce011a-021c-3818-8d43-217218c7b27e',
                 'modified'=> date('Y-m-d H:i:s'),
                 'created'=> date('Y-m-d H:i:s'),
             ],
-           
+            [
+                'id' => $faker->uuid,
+                'role_id' => '1ef84b99-0703-36b5-8ba7-45c620014444',
+                'previleadge_id' => '20af05ed-76d3-327e-8c96-f1b29d4d26e2',
+                'modified'=> date('Y-m-d H:i:s'),
+                'created'=> date('Y-m-d H:i:s'),
+            ],
+            [
+                'id' => $faker->uuid,
+                'role_id' => '1ef84b99-0703-36b5-8ba7-45c620014444',
+                'previleadge_id' => '8adef566-ffec-3698-bf4b-402635d81999',
+                'modified'=> date('Y-m-d H:i:s'),
+                'created'=> date('Y-m-d H:i:s'),
+            ],
+
            
             
         ];

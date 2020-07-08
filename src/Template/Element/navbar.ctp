@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-lg navbar-light header" id="header">
-    <a class="navbar-brand " href="/">
+    <a class="navbar-brand " href="/listings/">
        <span class="logo" style="color:var(--primary-color)">Business</span>
         <p class="logo-sub" >by Skole</p>
     </a>
@@ -16,6 +16,12 @@
             
             <li class="nav-item">
                 <?= $this->Html->link('Listings', ['controller' => 'listings', 'action' => 'index', 'plugin' => 'Directory'], ['class' => isset($page) && $page === 'listing' ? 'nav-link active' :  'nav-link']) ?>
+            </li>
+            <li class="nav-item">
+                <?= isset($_SESSION['Auth']) ?  $this->Html->link('Categories', ['controller' => 'categories', 'action' => 'index', 'plugin' => 'Directory'], ['class' => isset($page) && $page === 'categories' ? 'nav-link active' :  'nav-link']): '' ?>
+            </li>
+            <li class="nav-item">
+                <?= isset($_SESSION['Auth']) ? $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout', 'plugin' => 'Users'], ['class' => isset($page) && $page === 'listing' ? 'nav-link active' :  'nav-link']) : '' ?>
             </li>
         </ul>
            

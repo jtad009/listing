@@ -47,6 +47,10 @@ class CategoriesController extends AppController
      */
     public function add()
     {
+       
+        if(!$this->isAuthorized($this->Auth->user(), 'CREATE_CATEGORY')):
+            throw new \Exception("UnAuthorized User", 401); 
+        endif;
         $category = $this->Categories->newEntity();
         if ($this->request->is('post')) {
             $category = $this->Categories->patchEntity($category, $this->request->getData());
@@ -69,6 +73,9 @@ class CategoriesController extends AppController
      */
     public function edit($id = null)
     {
+        if(!$this->isAuthorized($this->Auth->user(), 'CREATE_CATEGORY')):
+            throw new \Exception("UnAuthorized User", 401); 
+        endif;
         $category = $this->Categories->get($id, [
             'contain' => [],
         ]);
@@ -93,6 +100,9 @@ class CategoriesController extends AppController
      */
     public function delete($id = null)
     {
+        if ($this->Auth->user('role.role') != 'SUPER_ADMIN') :
+            throw new \Exception("UnAuthorized User", 401);
+        endif;
         $this->request->allowMethod(['post', 'delete']);
         $category = $this->Categories->get($id);
         if ($this->Categories->delete($category)) {

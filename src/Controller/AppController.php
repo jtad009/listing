@@ -45,8 +45,27 @@ class AppController extends Controller
             'enableBeforeRedirect' => false,
         ]);
         $this->loadComponent('Flash');
-        $param = ['get_code' => isset($_GET['code']) ? $_GET['code'] : '', ];
-        $this->loadComponent('Instagram', $param);
+        $this->loadComponent('Auth', [
+            'loginAction' => [
+                'controller' => 'Users',
+                'action' => 'login',
+                'plugin' => 'Users'
+            ],
+            'authError' => 'Authentication Error.',
+            'authenticate' => [
+
+                'Form' => [
+
+                    'fields' => [
+                        'username' => 'username',
+                        'password' => 'password'
+                    ],
+
+                ],
+            ],
+            'storage' => 'Session',
+            'unauthorizedRedirect' => false
+        ]);
 
         /*
          * Enable the following component for recommended CakePHP security settings.
@@ -54,4 +73,5 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
     }
+   
 }

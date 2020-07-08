@@ -11,12 +11,18 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                  <li class="breadcrumb-item"><?= $this->Html->link(__('Listing'), ['action' => 'index']) ?></li>
+                 <li class="breadcrumb-item"><?= $this->Html->link(__('Add Listing'), ['action' => 'add']) ?></li>
             </ol>
         </nav>
         </nav>
         <div class="row">
 
-
+        <div class="col-md-12 mb-4">
+            <form>
+            <input type="text" class="form-control" id="param" name="param" placeholder="enter address, email, phone, url to find listing"/>
+            </form>
+            
+        </div>
 
             <?php foreach ($listings as $listing) :
                 echo $this->element('post-card-2', [
@@ -37,6 +43,6 @@
 
             
         </div>
-        <?= $this->element('pagination') ?>
+       
     </div>
 </div>

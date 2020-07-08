@@ -12,6 +12,8 @@ use Cake\ORM\Entity;
  * @property bool $unpublished
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
+ *
+ * @property \Directory\Model\Entity\Listing[] $listings
  */
 class Category extends Entity
 {
@@ -30,5 +32,6 @@ class Category extends Entity
         'unpublished' => true,
         'created' => true,
         'modified' => true,
+        'listings' => true,
     ];
 }

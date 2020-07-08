@@ -13,6 +13,7 @@ use Cake\Validation\Validator;
  * @property \Directory\Model\Table\ListingImagesTable&\Cake\ORM\Association\HasMany $ListingImages
  * @property \Directory\Model\Table\ListingReviewsTable&\Cake\ORM\Association\HasMany $ListingReviews
  * @property \Directory\Model\Table\ListingViewsTable&\Cake\ORM\Association\HasMany $ListingViews
+ * @property \Directory\Model\Table\CategoriesTable&\Cake\ORM\Association\BelongsToMany $Categories
  *
  * @method \Directory\Model\Entity\Listing get($primaryKey, $options = [])
  * @method \Directory\Model\Entity\Listing newEntity($data = null, array $options = [])
@@ -40,7 +41,7 @@ class ListingsTable extends Table
         $this->setTable('listings');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
-
+        $this->addBehavior('Directory.FindListing');
         $this->addBehavior('Timestamp');
 
         $this->belongsTo('States', [
@@ -59,6 +60,12 @@ class ListingsTable extends Table
         $this->hasMany('ListingViews', [
             'foreignKey' => 'listing_id',
             'className' => 'Directory.ListingViews',
+        ]);
+        $this->belongsToMany('Categories', [
+            'foreignKey' => 'listing_id',
+            'targetForeignKey' => 'category_id',
+            'joinTable' => 'listings_categories',
+            'className' => 'Directory.Categories',
         ]);
     }
 
@@ -106,6 +113,14 @@ class ListingsTable extends Table
             ->scalar('address')
             ->requirePresence('address', 'create')
             ->notEmptyString('address');
+
+        $validator
+            ->boolean('published')
+            ->notEmptyString('published');
+
+        $validator
+            ->boolean('approved')
+            ->notEmptyString('approved');
 
         return $validator;
     }

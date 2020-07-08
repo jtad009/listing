@@ -9,6 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Categories Model
  *
+ * @property \Directory\Model\Table\ListingsTable&\Cake\ORM\Association\BelongsToMany $Listings
+ *
  * @method \Directory\Model\Entity\Category get($primaryKey, $options = [])
  * @method \Directory\Model\Entity\Category newEntity($data = null, array $options = [])
  * @method \Directory\Model\Entity\Category[] newEntities(array $data, array $options = [])
@@ -37,6 +39,13 @@ class CategoriesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        $this->belongsToMany('Listings', [
+            'foreignKey' => 'category_id',
+            'targetForeignKey' => 'listing_id',
+            'joinTable' => 'listings_categories',
+            'className' => 'Directory.Listings',
+        ]);
     }
 
     /**

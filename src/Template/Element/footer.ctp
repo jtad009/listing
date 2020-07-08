@@ -62,4 +62,3 @@
     </div>
 
 </div>
-<?= $this->Html->script('Blog.subscription') ?>

@@ -39,12 +39,12 @@ class CategoriesFixture extends TestFixture
     {
         $this->records = [
             [
-                'id' => 'a41d2be6-39d0-4fb9-8f07-b108854fccc9',
+                'id' => 'a3180bc1-981e-4791-b7c5-fc55eeb2ec49',
                 'category' => 'Lorem ipsum dolor sit amet',
                 'listing_count' => 1,
                 'unpublished' => 1,
-                'created' => 1594155188,
-                'modified' => 1594155188,
+                'created' => 1594204892,
+                'modified' => 1594204892,
             ],
         ];
         parent::init();

@@ -93,15 +93,10 @@ define('CAKE', CORE_PATH . 'src' . DS);
 define('SHOUT_IMAGE_UPLOAD_PATH',WWW_ROOT . 'img');
 define('EXCEL_UPLOAD_PATH',WWW_ROOT . 'excel');
 define('PDF_UPLOAD_PATH',WWW_ROOT . 'pdf/');
-define('APP_NAME', 'Doubble');
+define('APP_NAME', 'Business');
 define('APP_EMAIL', env('DEFAULT_EMAIL_ADDRESS',null));
-define('NO_REPLY', 'no-reply@wbcstaging.com');
-define('BASE_DOMAIN', env('BASE_DOMAIN','https://doubble_dev.wbcstaging.com/'));
-define('TWITTER_HANDLE', '');
-define('INSTAGRAM_CLIENT_ID','');
-define('AUDIENCE_ID', 'ca4bf2eabb');
-define('MAILCHIMP_API_KEY', 'dcf34959daf5fc3477120ca03d83589d-us10');
-define('DISCUS_URL', 'https://doubbletest.disqus.com/embed.js');
+define('BASE_DOMAIN', env('BASE_DOMAIN',''));
+
 define('LOGO_PATH', 'logo.svg');
 define('BG', 'bg-white');
-define("NO_ARTICLE", "No Articles Published At this Time.");
+

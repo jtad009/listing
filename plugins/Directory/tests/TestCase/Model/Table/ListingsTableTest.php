@@ -28,6 +28,7 @@ class ListingsTableTest extends TestCase
         'plugin.Directory.ListingImages',
         'plugin.Directory.ListingReviews',
         'plugin.Directory.ListingViews',
+        'plugin.Directory.Categories',
     ];
 
     /**

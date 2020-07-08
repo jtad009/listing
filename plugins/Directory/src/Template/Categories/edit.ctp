@@ -4,28 +4,27 @@
  * @var \Cake\Datasource\EntityInterface $category
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $category->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $category->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Categories'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
-<div class="categories form large-9 medium-8 columns content">
+<div class="row">
+    <div class="col-md-10 mx-auto">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><?= $this->Html->link(__('Categories'), ['action' => 'index']) ?></li>
+                <li class="breadcrumb-item"><?= 'Edit Listing' ?></li>
+            </ol>
+        </nav>
+<div class="card mb-4">
     <?= $this->Form->create($category) ?>
-    <fieldset>
-        <legend><?= __('Edit Category') ?></legend>
+    <div class="card-body">
+        <legend class="card-title title"><?= __('Edit Category') ?></legend>
         <?php
-            echo $this->Form->control('category');
-            echo $this->Form->control('listing_count');
+            echo $this->Form->control('category' ,['class'=>'form-control']);
+            echo $this->Form->control('listing_count', ['class'=>'form-control']);
             echo $this->Form->control('unpublished');
         ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+         <?= $this->Form->button(__('Submit'), ['class'=>'btn btn-primary']) ?>
+    </div>
+   
     <?= $this->Form->end() ?>
+</div>
+    </div>
 </div>

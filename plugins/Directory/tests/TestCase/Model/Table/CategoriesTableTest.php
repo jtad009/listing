@@ -24,6 +24,7 @@ class CategoriesTableTest extends TestCase
      */
     public $fixtures = [
         'plugin.Directory.Categories',
+        'plugin.Directory.Listings',
     ];
 
     /**

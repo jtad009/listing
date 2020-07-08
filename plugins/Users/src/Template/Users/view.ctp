@@ -4,6 +4,7 @@
  * @var \Cake\Datasource\EntityInterface $user
  */
 ?>
+
 <div class="row">
     <div class="col-md-10 mx-auto">
     <nav aria-label="breadcrumb">
@@ -14,7 +15,9 @@
             </ol>
         </nav>
 <div class="card">
-    <h3 class="card-title"><?= h($user->id) ?></h3>
+    <?= $this->Html->image(h($user->image), ['class'=>'card-img-top', 'alt'=>$user->username])?>
+
+    <h3 class="card-header"><?= h($user->fullname) ?></h3>
     <table class="table table-sm table-bordered">
        
         <tr>
@@ -30,10 +33,7 @@
             <td><?= h($user->last_name) ?></td>
         </tr>
         
-        <tr>
-            <th scope="row"><?= __('Image') ?></th>
-            <td><?= h($user->image) ?></td>
-        </tr>
+        
         <tr>
             <th scope="row"><?= __('Email') ?></th>
             <td><?= h($user->email) ?></td>

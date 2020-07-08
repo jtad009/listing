@@ -58,7 +58,7 @@ class Application extends BaseApplication
         // Load more plugins here
        
         $this->addPlugin('Users');
-        $this->addPlugin('BusinessListing');
+       
     }
 
     /**

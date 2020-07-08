@@ -1,5 +1,5 @@
 <?php 
-$cakeDescription =  "DivaPad-  Admin Signin";
+$cakeDescription =  "Sign-in";
 
 ?>
 <!DOCTYPE html>
@@ -9,33 +9,27 @@ $cakeDescription =  "DivaPad-  Admin Signin";
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="DivaPad Admin section">
+        <meta name="description" content=" Admin section">
         <meta name="author" content=" ">
         <title>
             <?= $this->fetch('title') ?>
             <?= $cakeDescription ?>:
             
         </title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap" rel="stylesheet">
         <link rel="icon" href="https://spectaprime.azureedge.net/doubble/v2/assets/favicon.ico" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
-       <?= $this->Html->css('Blog.blog_style') ?>
+   
+    <?= $this->Html->css('header') ?>   
+    <?= $this->Html->css('Users.blog_style') ?>
         <?= $this->fetch('meta') ?>
         <?= $this->fetch('css') ?>
         <?= $this->fetch('script') ?>
         <style>
         </style>
-
-    
-
-   
-
-   
-
-
 
     </head>
    <body>

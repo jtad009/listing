@@ -1,4 +1,4 @@
-## Doubble
+## Business
 1. [Introduction](#introduction)
 2. [Setup](#setup)
 3. [Requirements](#requirements)
@@ -9,7 +9,7 @@
 
 ### Introduction
 
-Doubble is built using  opensource CakePHP 3.8 technology
+Business_Listing is built using  opensource CakePHP 3.8 technology
 
 
 **Read Cakephp's documentation: [CakePHP Docs](https://book.cakephp.org/3/en/index.html/)**
@@ -48,7 +48,7 @@ Find file **config/.env** or create one in your config directory and set the env
 * **DEFAULT_EMAIL_ADDRESS**
 * **DEFAULT_EMAIL_PASSWORD**
 
-Mailer environment variables are also required to be set up. This is because **Doubble** needs to send emails to  admins depending on what events require notification.
+Mailer environment variables are also required to be set up. This is because **Business** needs to send emails to  admins depending on what events require notification.
 
 ~~~
 2. composer db-migrate
@@ -71,7 +71,7 @@ bin/cake plugin assets copy
 5. composer dump-autoload -o
 ~~~
 
-**To execute Doubble Test**:
+**To execute Business Listing**:
 Run the following command
 ~~~
 1. composer check 
@@ -79,7 +79,7 @@ Run the following command
 This command runs test and linting 
 ~~~
 
-**To execute Doubble**:
+**To execute Business Listing**:
 
 ##### On server:
 
