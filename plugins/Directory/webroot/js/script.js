@@ -1,4 +1,4 @@
-var baseLink = window.location.href.indexOf('localhost') > -1 ? 'http://localhost:7020/' : 'https://listing.skole.com.ng/';
+var baseLink = window.location.href.indexOf('localhost') > -1 ? 'http://localhost:7020/' : 'http://listing.skole.com.ng/';
 $(document).ready(function(){
     $(document).on('click', 'a#approve', function(e){
         e.preventDefault();

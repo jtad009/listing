@@ -15,10 +15,12 @@
                 </ol>
             </nav>
         </nav>
+        <?php if(isset($_SESSION['Auth'])): ?>
         <div class="d-flex mb-3">
             <a data-aos="zoom-in" class="btn btn-primary mr-3" href="#" id="approve" data-val="<?= $listing->approved ? 1: 0 ?>" data-id="<?= $listing->id  ?>"><?= $listing->published ? 'Approve Listing' : 'Un-Approve Listing' ?></a>
             <a data-aos="zoom-in"  class="btn btn-primary" href="#" id="publish" data-val="<?= $listing->published ? 1 : 0 ?>" data-id="<?= $listing->id  ?>"><?= $listing->published ? 'Publish Listing' : 'Unpublish Listing' ?></a>
         </div>
+        <?php endif; ?>
         <div class="card border-0 blogCard">
             <div class="card-header d-flex">
                 <h3 class=" title">Business Name: <?= h($listing->business_name) ?></h3>
