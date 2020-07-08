@@ -23,7 +23,7 @@ class UsersSeed extends AbstractSeed
         $data = [[
             'role_id'=>$role_ids[0],
             'id' => "108f6bf9-d1f5-4f25-9246-cc0864cb95cb",
-            'username'  => 'admin',
+            'username'  => 'super-admin',
             'first_name' => $faker->firstName(),
             'last_name'=>$faker->lastName(),
             'image'=>$faker->imageUrl(),
@@ -34,7 +34,7 @@ class UsersSeed extends AbstractSeed
         [
             'role_id'=>$role_ids[1],
             'id' => "008f6bf9-d1f5-4f25-9246-cc0864cb95cb",
-            'username'  => 'super-admin',
+            'username'  => 'admin',
             'first_name' => $faker->firstName(),
             'last_name'=>$faker->lastName(),
             'image'=>$faker->imageUrl(),

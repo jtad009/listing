@@ -6,7 +6,7 @@
 ?>
 
 <div class="row">
-    <div class="col-md-10 mx-auto">
+    <div class="col-md-8 mx-auto">
     <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
 
@@ -14,7 +14,7 @@
                 <li class="breadcrumb-item"><?= $this->Html->link(__('View'), ['action' => 'View']) ?></li>
             </ol>
         </nav>
-<div class="card">
+<div class="card mb-3">
     <?= $this->Html->image(h($user->image), ['class'=>'card-img-top', 'alt'=>$user->username])?>
 
     <h3 class="card-header"><?= h($user->fullname) ?></h3>
@@ -39,8 +39,8 @@
             <td><?= h($user->email) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Role Id') ?></th>
-            <td><?= h($user->role_id) ?></td>
+            <th scope="row"><?= __('Role') ?></th>
+            <td><?= h($user->role->role) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Created') ?></th>
