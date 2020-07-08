@@ -63,16 +63,10 @@ Router::scope('/', function (RouteBuilder $routes) {
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
     $routes->connect('/', ['controller' => 'Pages', 'action' => 'home']);
-    $routes->connect('/fixed-product', ['controller' => 'Pages', 'action' => 'fixed-product']);
-    $routes->connect('/reward-product', ['controller' => 'Pages', 'action' => 'reward-product']);
-    $routes->connect('/target-product', ['controller' => 'Pages', 'action' => 'target-product']);
-    $routes->connect('/faqs', ['controller' => 'Pages', 'action' => 'faqs']);
-    $routes->connect('/review', ['controller' => 'Reviews', 'action' => 'index']);
-    $routes->connect('/terms', ['controller' => 'Pages', 'action' => 'terms']);
 
 
-    $routes->connect('/admin/', ['controller' => 'users', 'action' => 'login', 'plugin'=>'Blog']);
-    $routes->connect('/subscriptions/add', ['controller' => 'subscriptions', 'action' => 'add', 'plugin'=>'Blog']);
+
+  
 
    
 

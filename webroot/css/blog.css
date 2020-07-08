@@ -131,3 +131,51 @@ span.readTime {
 .card-img-top{
     min-height: 246px;
 }
+.views, .ratings{
+    width:40px;
+    padding:8px;
+    font-size: 1rem;
+}
+.pagination li {
+    font-size: 14px !important;
+    padding: 8px !important;
+}
+
+.pagination li a {
+    color: var(--color-2) !important;
+}
+.paginator> p{
+    font-size: 1rem;;
+}
+.pagination li.next, .pagination li.prev {
+    border: 1px solid #ccc !important;
+    margin-left: 8px;
+    padding: 8px !important;
+    width: 9%;
+    text-align: center;
+    font-size: 12px !important;
+}
+
+.pagination li.next>a {
+    padding: 8px !important;
+}
+.views:after {
+    position: absolute;
+content: "\f06e";
+font-size: 1em;
+
+font: normal normal normal 14px/1 FontAwesome;;
+height: 20px;
+width: 20px;
+padding-left:4px;
+}
+.ratings:after {
+    position: absolute;
+content: "\f005";
+font-size: 1em;
+color:orange;
+font: normal normal normal 14px/1 FontAwesome;;
+height: 20px;
+width: 20px;
+padding-left:4px;
+}

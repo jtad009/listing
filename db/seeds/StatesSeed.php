@@ -34,6 +34,16 @@ class StatesSeed extends AbstractSeed
                 'states' => 'Adamawa',
                 'county_code' => '1',
             ],
+            [
+                'id' => '4',
+                'states' => 'lagos',
+                'county_code' => '1',
+            ],
+            [
+                'id' => '5',
+                'states' => 'Osun',
+                'county_code' => '1',
+            ],
         ];
 
         $rows = $this->fetchAll('SELECT * FROM states'); // returns PDOStatement

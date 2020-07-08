@@ -1,11 +1,11 @@
 <div class="col-md-12 col-lg-4 mb-2" data-aos="zoom-in">
-    <div class="card border-0 blogCard" >
+    <div class="card  blogCard" >
         
-        <?= $this->Html->image('passport/blogs/400/'.$image, ['alt'=>$slug, 'class'=>'card-img-top']) ?>
+        <?= $this->Html->image($image, ['alt'=>$id, 'class'=>'card-img-top']) ?>
         <div class="card-body">
-            <h4 class="card-title d-none"></h4>
-            <p class="card-text mt-4"><?= $title ?></p>
-            <?= $this->Html->link(strtoupper('Read More'), ['controller'=>'articles', 'action'=>'view', $slug ], ['rel'=>"canonical",'class'=>'float-right'])?>
+            <h5 class="card-title small">User-Type: <?= $role ?></h5>
+            <p class="card-text "><?= $fullname ?></p>
+            <?= $this->Html->link(strtoupper('View'), ['controller'=>'users', 'action'=>'view', $id ], ['rel'=>"canonical",'class'=>'float-right'])?>
             
         </div>
     </div>

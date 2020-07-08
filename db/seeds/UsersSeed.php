@@ -18,50 +18,21 @@ class UsersSeed extends AbstractSeed
      */
     public function run()
     {
-        $data = [
-            [
-                'id' => '1',
-                'username' => 'israeledet',
-                'first_name' => 'israels',
-                'last_name' => 'edet',
-                'article_count' => '12',
-                'created' => '2020-04-06 18:49:24',
-                'bio' => 'An Enthusiat at heartss',
+        $faker = Faker\Factory::create();
+        $role_ids = ["14737777-cd91-3c75-8193-4b25f7ebc7bf", "1ef84b99-0703-36b5-8ba7-45c620014444"];
+        for ($i = 0; $i < 2; $i++) {
+            $data[] = [
+                'role_id'=>$role_ids[$i],
+                'id' => $i."08f6bf9-d1f5-4f25-9246-cc0864cb95cb",
+                'username'  => $faker->userName,
+                'first_name' => $faker->firstName(),
+                'last_name'=>$faker->lastName(),
+                'image'=>$faker->imageUrl(),
+                'email'=>$faker->email,
                 'password' => '$2y$10$PPDLhEoSo9qkDYl3O5s.l.mDqf6CTo6saZITbQegZaL4qi/g4xSzS',
-                'canWrite' => '0',
-                'image' => '/var/www/html/webroot/DIVAPAD-6033c.png',
-                'email' => 'israeledet@yahoo.com',
-                'api_key' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpc3JhZWxlZGV0IiwiaWF0IjoxNTkwMzMxMjE0LCJleHAiOjE1OTAzNjQ4MDB9.jyaBKLO3mYVGCKMDZbCz2Xyvg9RKj7Y7Qognof0nDGg',
-            ],
-            [
-                'id' => '2',
-                'username' => 'ruth',
-                'first_name' => 'Life',
-                'last_name' => 'Coco',
-                'article_count' => '5',
-                'created' => '2020-04-06 18:49:24',
-                'bio' => 'A lifestyle blogger',
-                'password' => '$2y$10$kumaUAsy.AeYneGJS134OO1KjN.cdkYCJKEfo20XKBVMryNieggtC',
-                'canWrite' => '1',
-                'image' => 'Skole-b8101.jpg',
-                'email' => 'cocobasseyruth@gmail.com',
-                'api_key' => '',
-            ],
-            [
-                'id' => '3',
-                'username' => 'precious_akah',
-                'first_name' => 'Precious',
-                'last_name' => 'Akah',
-                'article_count' => '1',
-                'created' => '2020-04-06 18:49:24',
-                'bio' => 'I am great with children',
-                'password' => '$2y$10$VEavU6Gsf/YuXf2ZxyhfUeJukgpwmPx7FZkD2VVKZbrCo5CQF1WCe',
-                'canWrite' => '0',
-                'image' => 'Skole-3c515.png',
-                'email' => 'precious_akah@yahoo.com',
-                'api_key' => '',
-            ],
-        ];
+                'created'=> date('Y-m-d H:i:s'),
+            ];
+        }
 
         
         $rows = $this->fetchAll('SELECT * FROM users'); // returns PDOStatement

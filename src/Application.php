@@ -34,7 +34,11 @@ class Application extends BaseApplication
      */
     public function bootstrap()
     {
-        $this->addPlugin('Blog');
+        $this->addPlugin('Directory');
+
+        
+
+        
 
         // Call parent to load bootstrap from files.
         parent::bootstrap();
@@ -52,6 +56,9 @@ class Application extends BaseApplication
         }
 
         // Load more plugins here
+       
+        $this->addPlugin('Users');
+        $this->addPlugin('BusinessListing');
     }
 
     /**

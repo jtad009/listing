@@ -37,7 +37,7 @@
 
 body {
     font-size: 24px;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .nav-item {
@@ -54,7 +54,7 @@ body {
 .title {
     font-size: var(--font-title-2);
     color: var(--primary-color);
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: bold;
     /* line-height: 68px; */
@@ -64,7 +64,7 @@ body {
 }
 
 .subtitle {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     /* line-height: 27px; */
@@ -103,7 +103,7 @@ body {
     height: 36px;
     left: 364px;
     top: 26px;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: var(--font-small-16);
@@ -117,7 +117,7 @@ body {
     width: 117.8px;
     height: 34.15px;
     left: 81.24px;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 11px;
@@ -205,7 +205,7 @@ body {
         left: 0px;
         padding: 20px;
         top: 86px;
-        font-family: 'PT Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
         font-style: normal;
         font-weight: normal;
         line-height: 27px;
@@ -271,8 +271,11 @@ body {
         margin-top: 20px;
         width: 40px;
     }
-    .logo {
+    .navbar-brand > .logo {
         min-height: 74px;
+       
+        font-size: 3rem;
+        font-weight: 400;
     }
     .navbar {
         min-height: 129px;
@@ -290,7 +293,11 @@ body {
         padding: 2px 30px;
     }
 }
-
+.navbar-brand > .logo {
+    color: #ccc !important;
+    font-size: 2rem;
+    font-weight: 500;
+}
 #passwordHelpBlocks {
     font-size: var(--font-small-16);
 }
@@ -312,7 +319,7 @@ body {
     box-shadow: 0px 2px 4px var(--border-shadow-color);
     border-radius: 5px;
     border-color: var(--primary-color);
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .btn-primary:hover, .btn-primary.focus, .btn-primary:focus, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
@@ -329,7 +336,7 @@ body {
     box-shadow: 0px 2px 4px var(--border-shadow-color);
     border-radius: 5px;
     color: var(--primary-color);
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .btn-primary-outline:hover, .btn-primary-outline.focus, .btn-primary-outline:focus, .btn-primary-outline:not(:disabled):not(.disabled).active, .btn-primary-outline:not(:disabled):not(.disabled):active, .show>.btn-primary-outline.dropdown-toggle {
@@ -345,7 +352,7 @@ body {
     box-shadow: 0px 2px 4px var(--border-shadow-color);
     border-radius: 5px;
     color: white !important;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .btn-primary-outline-invert:hover, .btn-primary-outline-invert.focus, .btn-primary-outline-invert:focus, .btn-primary-outline-invert:not(:disabled):not(.disabled).active, .btn-primary-outline-invert:not(:disabled):not(.disabled):active, .show>.btn-primary-outline-invert.dropdown-toggle {

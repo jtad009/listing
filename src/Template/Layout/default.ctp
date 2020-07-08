@@ -11,7 +11,7 @@ $cakeDescription = isset($page) ? strtoupper($page) : APP_NAME;
 <!-- End Google Tag Manager -->
 
     <?= $this->Html->charset() ?>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/header.css">
@@ -25,6 +25,7 @@ $cakeDescription = isset($page) ? strtoupper($page) : APP_NAME;
     <title><?= $this->fetch('title') ?></title>
     <meta name="description" content="<?= $this->fetch('pageDescription') ?>">
     <?= $this->Html->css('header.css') ?>
+    <?= $this->Html->css('blog.css') ?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
@@ -39,6 +40,8 @@ $cakeDescription = isset($page) ? strtoupper($page) : APP_NAME;
         
 
     <div class="container-fluid">
+<br/>
+
 
        
             <?= $this->fetch('content') ?>

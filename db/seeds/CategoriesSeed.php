@@ -1,6 +1,5 @@
 <?php
 use Phinx\Seed\AbstractSeed;
-
 /**
  * Categories seed.
  */
@@ -18,29 +17,21 @@ class CategoriesSeed extends AbstractSeed
      */
     public function run()
     {
-        $data = [
-            [
-                'id' => '1',
-                'category' => 'educations',
-                'article_count' => '8',
-                'created' => '2020-04-06 18:49:24',
-                'modified' => '2020-04-06 18:49:24',
-            ],
-            [
-                'id' => '2',
-                'category' => 'ICT',
-                'article_count' => '0',
-                'created' => '2020-04-06 18:49:24',
-                'modified' => '2020-04-06 18:49:24',
-            ],
-            [
-                'id' => '3',
-                'category' => 'Raising children',
-                'article_count' => '0',
-                'created' => '2020-04-06 18:49:24',
-                'modified' => '2020-04-06 18:49:24',
-            ],
-        ];
+        $faker = Faker\Factory::create();
+        $data = [];
+        $unpublished = true;
+        for ($i = 0; $i < 10; $i++) {
+            $data[] = [
+                'id'      => $faker->uuid,
+                'category'      => $faker->userName,
+                'listing_count' => $i,
+                'unpublished'         => !$unpublished,
+                'created'       => date('Y-m-d H:i:s'),
+                'modified'       => date('Y-m-d H:i:s'),
+            ];
+        }
+
+       
 
         
         $rows = $this->fetchAll('SELECT * FROM categories'); // returns PDOStatement

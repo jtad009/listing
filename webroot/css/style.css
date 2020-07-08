@@ -30,7 +30,7 @@
 .title-sm {
     font-size: var(--font-title-3);
     color: var(--primary-color);
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: bold;
     line-height: 68px;
@@ -40,7 +40,7 @@
 }
 
 .subtitle-sm {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     line-height: 37px;
@@ -167,7 +167,7 @@
 }
 
 .b-card .body>p, .b-card .body>b {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-size: var(--font-small-18);
     /* or 151% */
@@ -219,7 +219,7 @@ SECTION 4
 }
 
 .four span {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: bold;
     line-height: 30px;

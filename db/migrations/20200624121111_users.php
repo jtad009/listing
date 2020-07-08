@@ -33,63 +33,57 @@ class Users extends AbstractMigration
     {
         $exists = $this->hasTable('users');
         if (!$exists) {
-        $this->table('users')
-            ->addColumn('username', 'string', [
+        $table = $this->table('users',['id' => false, 'primary_key' => ['id']]);
+        $table->addColumn('id', 'uuid', [
+            'default' => 'UUID()',
+            'limit' => null,
+            'null' => false,
+        ]);
+            $table->addColumn('username', 'string', [
                 'default' => null,
                 'limit' => 200,
                 'null' => false,
-            ])
-            ->addColumn('first_name', 'string', [
+            ]);
+            $table->addColumn('first_name', 'string', [
                 'default' => null,
                 'limit' => 200,
                 'null' => false,
-            ])
-            ->addColumn('last_name', 'string', [
+            ]);
+            $table->addColumn('last_name', 'string', [
                 'default' => null,
                 'limit' => 200,
                 'null' => false,
-            ])
-            ->addColumn('article_count', 'integer', [
-                'default' => null,
-                'limit' => 11,
-                'null' => false,
-            ])
-            ->addColumn('created', 'timestamp', [
+            ]);
+            $table->addColumn('created', 'timestamp', [
                 'default' => '2020-04-06 18:49:24',
                 'limit' => null,
                 'null' => false,
-            ])
-            ->addColumn('bio', 'text', [
-                'default' => null,
-                'limit' => null,
-                'null' => false,
-            ])
-            ->addColumn('password', 'string', [
+            ]);
+           
+            $table->addColumn('password', 'string', [
                 'default' => null,
                 'limit' => 200,
                 'null' => false,
-            ])
-            ->addColumn('canWrite', 'boolean', [
-                'default' => false,
-                'limit' => null,
-                'null' => false,
-            ])
-            ->addColumn('image', 'string', [
+            ]);
+            
+            $table->addColumn('image', 'string', [
                 'default' => null,
                 'limit' => 200,
                 'null' => false,
-            ])
-            ->addColumn('email', 'string', [
+            ]);
+            $table->addColumn('email', 'string', [
                 'default' => null,
                 'limit' => 200,
                 'null' => false,
-            ])
-            ->addColumn('api_key', 'string', [
-                'default' => null,
-                'limit' => 200,
+            ]);
+            $table->addColumn('role_id', 'uuid', [
+                'default' => 'UUID()',
+                'limit' => 36,
                 'null' => false,
-            ])
-            ->create();
+            ]);
+           
+            $table->addIndex(['username', 'email'], ['unique' => true]);
+            $table->create();
             }
     }
     /**

@@ -2,42 +2,38 @@
 
     <div class="col-sm-12 col-lg-3 " style="min-height: inherit;">
         <a class="navbar-brand " href="/">
-            <?= $this->Html->image('logo.svg', ['class' => 'logo']) ?>
+            <span class="logo">Business</span>
 
-            <p class="logo-sub">by Sterling Bank</p>
+            <p class="logo-sub">by Skole</p>
         </a>
     </div>
     <div class="spacer" style="width:60px"></div>
     <div class="d-none d-lg-block col-sm-12 col-lg-2">
         <p class="title mt-3">Product</p>
-        <p><?= $this->Html->link('Doubble Rewards', ['controller' => 'pages', 'action' => 'reward-product', 'plugin' => null], ['class' => 'mt-1']) ?></p>
-        <p><?= $this->Html->link('Doubble Target', ['controller' => 'pages', 'action' => 'target-product', 'plugin' => null,], ['class' => 'mt-1']) ?></p>
-        <p><?= $this->Html->link('Doubble Fixed', ['controller' => 'pages', 'action' => 'fixed-product', 'plugin' => null], ['class' => 'mt-1']) ?></p>
+        <p><a href="#">Lorem Ipsum</a></p>
+        <p><a href="#">Lorem Ipsum</a></p>
+        <p><a href="#">Lorem Ipsum</a></p>
     </div>
     <div class="d-none d-lg-block col-sm-12 col-lg-2">
         <p class="title mt-3">Resources</p>
-        <p><?= $this->Html->link('Blog', ['controller' => 'articles', 'action' => 'index', 'plugin' => 'Blog'], ['class' => 'mt-1']) ?></p>
-        <p><?= $this->Html->link('Reviews', ['controller' => 'Reviews', 'action' => 'index', 'plugin' => null,], ['class' => 'mt-1']) ?></p>
-        <p><?= $this->Html->link('FAQ', ['controller' => 'pages', 'action' => 'faqs', 'plugin' => null], ['class' => 'mt-1']) ?></p>
-        <p><?= $this->Html->link('T&C', ['controller' => 'pages', 'action' => 'terms', 'plugin' => null], ['class' => 'mt-1']) ?></p>
-
+        <p><a href="#">Lorem Ipsum</a></p>
+        <p><a href="#">Lorem Ipsum</a></p>
+        <p><a href="#">Lorem Ipsum</a></p>
     </div>
     <!-- mobile view -->
     <div class="d-block d-lg-none col-sm-6 col-lg-2">
         <p class="title mt-3">Product</p>
-        <p><?= $this->Html->link('Doubble Rewards', ['controller' => 'pages', 'action' => 'reward-product', 'plugin' => null], ['class' => 'mt-1']) ?></p>
-        <p><?= $this->Html->link('Doubble Target', ['controller' => 'pages', 'action' => 'target-product', 'plugin' => null,], ['class' => 'mt-1']) ?></p>
-        <p><?= $this->Html->link('Doubble Fixed', ['controller' => 'pages', 'action' => 'fixed-product', 'plugin' => null], ['class' => 'mt-1']) ?></p>
+        <p><a href="#">Lorem Ipsum</a></p>
+        <p><a href="#">Lorem Ipsum</a></p>
+        <p><a href="#">Lorem Ipsum</a></p>
 
 
     </div>
     <div class="d-block d-lg-none col-sm-6 col-lg-2">
         <p class="title mt-3">Resources</p>
-        <p><?= $this->Html->link('Blog', ['controller' => 'articles', 'action' => 'index', 'plugin' => 'Blog'], ['class' => 'mt-1']) ?></p>
-        <p><?= $this->Html->link('Reviews', ['controller' => 'pages', 'action' => 'review', 'plugin' => null,], ['class' => 'mt-1']) ?></p>
-        <p><?= $this->Html->link('FAQ', ['controller' => 'pages', 'action' => 'faqs', 'plugin' => null], ['class' => 'mt-1']) ?></p>
-        <p><?= $this->Html->link('T&C', ['controller' => 'pages', 'action' => 'terms', 'plugin' => null], ['class' => 'mt-1']) ?></p>
-
+        <p><a href="#">Lorem Ipsum</a></p>
+        <p><a href="#">Lorem Ipsum</a></p>
+        <p><a href="#">Lorem Ipsum</a></p>
 
     </div>
     <!-- end mobile view -->

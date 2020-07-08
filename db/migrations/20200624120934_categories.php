@@ -33,15 +33,25 @@ class Categories extends AbstractMigration
     {
         $exists = $this->hasTable('categories');
         if (!$exists) {
-        $table = $this->table('categories');
+        $table = $this->table('categories',['id' => false, 'primary_key' => ['id']]);
+        $table->addColumn('id', 'uuid', [
+            'default' => 'UUID()',
+            'limit' => null,
+            'null' => false,
+        ]);
             $table->addColumn('category', 'string', [
                 'default' => null,
                 'limit' => 200,
                 'null' => false,
             ]);
-            $table->addColumn('article_count', 'integer', [
+            $table->addColumn('listing_count', 'integer', [
                 'default' => null,
                 'limit' => 11,
+                'null' => false,
+            ]);
+            $table->addColumn('unpublished', 'boolean', [
+                'default' => false,
+                'limit' => null,
                 'null' => false,
             ]);
             $table->addColumn('created', 'timestamp', [

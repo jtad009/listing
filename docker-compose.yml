@@ -1,12 +1,12 @@
 version: '3'
 services:
-    doubble:
+    listing:
         image: d4_php
         volumes:
             - ./:/var/www/html
             - ./logs/apache/blogs:/var/log/apache2
         ports: 
-            - '8020:80'
+            - '7020:80'
         environment: 
             - VIRTUAL_HOST=bloged.com
         networks: 

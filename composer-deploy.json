@@ -51,7 +51,7 @@
         ],
         "cs-check": "phpcs --colors -p --standard=vendor/cakephp/cakephp-codesniffer/CakePHP src/ tests/",
         "cs-fix": "phpcbf --colors --standard=vendor/cakephp/cakephp-codesniffer/CakePHP src/ tests/",
-        "db-migrate-undo": "phinx rollback",
+        "db-migrate-undo": "phinx rollback -e development -t 0",
         "db-migrate": "phinx migrate",
         "db-seed": "phinx seed:run ",
         "set-staging-env": [
